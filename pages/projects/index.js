@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router'
-
 // import animaniac from '../../assets/img/animaniacs.gif'
 // import pokemon from '../../assets/img/pokemon.gif'
 // import ombdMovies from '../../assets/img/ombdMovies.gif'
@@ -9,15 +6,7 @@ import { useRouter } from 'next/router'
 // import styles from '../../styles/Projects.module.css'
 
 const Projects = () => {
-    const router = useRouter()
-    
-    useEffect(()=>{
-      var storage = localStorage.getItem('name')
-      if(!storage){
-        return router.push('/')
-      } 
-    },[])
-  
+
     // var proyect = [animaniac,pokemon,wheater,ombdMovies]
   
     const animaniacLink = () => window.open('http://104.236.92.12/') 
@@ -27,7 +16,18 @@ const Projects = () => {
 
   
     return (
-      <div>
+      <div className='container'>
+        <style jsx>
+          {`
+            .container{
+              width:100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+          `}
+        </style>
           <div>
             <ul>
               <li>

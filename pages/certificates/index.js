@@ -1,18 +1,8 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 // import henry from '../../assets/img/henry-certificate.png'
 // import efset from '../../assets/img/efset-certificate.png'
 // import utn from '../../assets/img/utn-certicate.png'
 
 const Certificates = () => {
-    const router = useRouter()
-    
-    useEffect(()=>{
-      var storage = localStorage.getItem('name')
-      if(!storage){
-        return router.push('/')
-      } 
-    },[])
 
     // const goCertificateEfset = () => {
     //     window.open('https://www.efset.org/cert/vCMdaz')
@@ -27,7 +17,18 @@ const Certificates = () => {
     // }
 
     return (
-        <div>
+        <div className='container'>
+            <style jsx>
+                {`
+                .container{
+                    width:100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                `}
+            </style>
             <div >
                 <div>
                     {/* <img src={henry} alt='henry-certificate' /> */}

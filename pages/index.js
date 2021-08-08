@@ -1,39 +1,261 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Code from '../components/Code/Code'
+import { useState, useEffect } from "react";
+
+import { useRouter } from "next/router";
+import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
+  var aux = [];
+  var codes = ["432765", "897654", "532176"];
+  const router = useRouter();
+  let logged;
+
+  if (typeof window !== "undefined") {
+    logged = localStorage.getItem("name");
+  }
+
+  useEffect(() => {
+    if (logged) {
+      router.push("/home");
+    }
+  });
+
+  const [numberCode, setNumberCode] = useState("");
+
+  const handleChange = (e) => setNumberCode(numberCode.concat(e));
+
+  const handleErase = () =>
+    setNumberCode(numberCode.substring(0, numberCode.length - 1));
+
+  const handleEnter = () => {
+    if (
+      numberCode === "432765" ||
+      numberCode === "897654" ||
+      numberCode === "532176"
+    ) {
+      let storage = localStorage.getItem("name");
+      if (storage) {
+        localStorage.clear();
+        localStorage.setItem("name", input.name);
+      } else {
+        localStorage.setItem("name", input.name);
+        router.push("/home");
+      }
+    } else {
+      alert("INTENTA DE NUEVO");
+    }
+  };
+
+  const [hidden, setHidden] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [input, setInput] = useState({
+    name: "",
+  });
+
+  const handleInputChange = (e) => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+    setErrors(
+      validate({
+        ...input,
+        [e.target.name]: e.target.value,
+      })
+    );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!input.name) {
+      setErrors({
+        name: "name is required!!",
+      });
+    } else {
+      setInput({
+        ...input,
+        [e.target.name]: aux.push(input.name),
+      });
+      setHidden(true);
+    }
+  };
+
+  const validate = (input) => {
+    let errors = {};
+    if (!input.name) {
+      errors.name = "name is required!!";
+    }
+    return errors;
+  };
+  const [codeRandom, setCodeRandom] = useState("");
+
+  const code = () => {
+    var aleatorio = Math.random() * codes.length;
+    var aux = Math.floor(aleatorio);
+    setCodeRandom(codes[aux]);
+  };
   return (
-    <div className={styles.container}>
+    <div className="container">
+      <style jsx>
+        {`
+          @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+          .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: "Indie Flower", cursive;
+          }
+          .hiddenCode {
+            display: none;
+          }
+          .displayName,
+          .displayCode {
+            width: 20em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+          }
+          .inputName {
+            width: 10em;
+            border: none;
+            border-radius: 0.5em;
+            box-shadow: 0px 0px 6px black;
+            outline: none;
+            text-align: center;
+          }
+          .inputName::placeholder {
+            text-align: center;
+          }
+          .send {
+            font-family: "Indie Flower", cursive;
+            border: none;
+            cursor: pointer;
+          }
+          .send:active {
+            transform: scale(0.95);
+          }
+          .buttons {
+            width: 20em;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .slideRight {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-around;
+            padding: 0;
+            margin: 0;
+          }
+          .slideRight li {
+            padding: 1em;
+            box-shadow: 0px 0px 5px;
+            border-radius: 0.5em;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            cursor: pointer;
+          }
+          .slideRight li:active {
+            transform: scale(0.9);
+          }
+          .footer {
+            width: 100%;
+            height: 100px;
+            border-top: 1px solid #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .footer a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+          }
+        `}
+      </style>
       <Head>
         <title>Matias Flores</title>
         <meta name="description" content="Generated by create next app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-         WELCOME TO MY PORTFOLIO
-        </h1>
-
-        <div className={styles.grid}>
-          <Code/>
+      <main>
+        <h1>Hi! my name is Matias Flores</h1>
+        <h2>Welcome to my portfolio</h2>
+        <div>
+          <div>
+            <div className={hidden ? "hiddenCode" : "displayName"}>
+              <form onSubmit={handleSubmit}>
+                <h2>Please insert your name to continue</h2>
+                <input
+                  autoComplete="off"
+                  className="inputName"
+                  name="name"
+                  placeholder="Name"
+                  type="text"
+                  value={input.name}
+                  onChange={handleInputChange}
+                />
+                {errors.name && errors.name === "name is required!!" ? (
+                  <p className="hatch">{errors.name}</p>
+                ) : (
+                  <p></p>
+                )}
+                <button className="send" type="submit" onClick={code}>
+                  Send
+                </button>
+              </form>
+            </div>
+            <div className={hidden ? "displayCode" : "hiddenCode"}>
+              <h2>your code is {codeRandom}</h2>
+              <input disabled value={numberCode} className="inputCode" />
+            </div>
+            <div className={hidden ? "buttons" : "hiddenCode"}>
+              <ul className="slideRight">
+                <li onClick={() => handleChange("1")}>1</li>
+                <li onClick={() => handleChange("2")}>2</li>
+                <li onClick={() => handleChange("3")}>3</li>
+              </ul>
+              <ul className="slideRight">
+                <li onClick={() => handleChange("4")}>4</li>
+                <li onClick={() => handleChange("5")}>5</li>
+                <li onClick={() => handleChange("6")}>6</li>
+              </ul>
+              <ul className="slideRight">
+                <li onClick={() => handleChange("7")}>7</li>
+                <li onClick={() => handleChange("8")}>8</li>
+                <li onClick={() => handleChange("9")}>9</li>
+              </ul>
+              <ul className="slideRight">
+                <li onClick={handleErase}>erase</li>
+                <li onClick={() => handleChange("0")}>0</li>
+                <li onClick={() => handleEnter()}>enter</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <span className={styles.logo}>
+          Powered by{" "}
+          <span>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

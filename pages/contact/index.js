@@ -1,6 +1,3 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-
 // import github from '../../assets/img/github.png'
 // import twitter from '../../assets/img/gorjeo.png'
 // import whatsapp from '../../assets/img/whatsapp.png'
@@ -11,15 +8,6 @@ import { useRouter } from 'next/router'
 
 
 const Contact = () => {
-
-    const router = useRouter()
-    
-    useEffect(()=>{
-      var storage = localStorage.getItem('name')
-      if(!storage){
-        return router.push('/')
-      } 
-    },[])
 
     // const goPage = () => window.open('https://github.com/floresmatias0')  
     // const goPageTwo = () => window.open('https://www.linkedin.com/in/matias-leandro-flores/')
@@ -39,7 +27,18 @@ const Contact = () => {
     // }
     
     return (
-        <div>
+        <div className='container'>
+            <style jsx>
+                {`
+                .container{
+                    width:100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                `}
+            </style>
             <h1>Contact</h1>
             <div >
                 <div>
