@@ -8,17 +8,12 @@ export default function Home() {
   var aux = [];
   var codes = ["432765", "897654", "532176"];
   const router = useRouter();
-  let logged;
-
-  if (typeof window !== "undefined") {
-    logged = localStorage.getItem("name");
-  }
 
   useEffect(() => {
-    if (logged) {
+    if(router.pathname === "/" && localStorage.getItem("name")) {
       router.push("/home");
     }
-  });
+  },[]);
 
   const [numberCode, setNumberCode] = useState("");
 
@@ -98,7 +93,6 @@ export default function Home() {
     <div className="container">
       <style jsx>
         {`
-          @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
           .container {
             width: 100%;
             display: flex;
@@ -259,3 +253,4 @@ export default function Home() {
     </div>
   );
 }
+

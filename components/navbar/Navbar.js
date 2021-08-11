@@ -1,31 +1,38 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import Mati from '../../assets/images/mati.png'
+import Mati from '../../assets/images/IMG_8764(edit).jpg'
+import backArrow from '../../assets/images/back-arrow.png'
+import nextArrow from '../../assets/images/next-arrow.png'
 
 export default function Navbar () {
-  let logged
   let router = useRouter()
-  
-  if (typeof window !== "undefined") {
-    logged = localStorage.getItem("name")
-  }
-  
+
+  const [logged, setLogged] = useState("")
   const [hidden, setHidden] = useState(false)
 
+  useEffect(() => {
+    if (localStorage.getItem("name")) {
+      setLogged(localStorage.getItem("name"))
+    }
+  },[])
+
   return (
-    <>
+    <div>
+
     <Head>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       />
     </Head>
+
     <nav>
+
       <style jsx>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -44,6 +51,10 @@ export default function Navbar () {
           .open, .home{
             width: 2em;
             margin: 0;
+          }
+          .open{
+            justify-content: center;
+            align-items: center;
           }
           .registered{
             width:6em;
@@ -66,7 +77,7 @@ export default function Navbar () {
           li:hover{
             color: #FFFFFF;
           }
-          .open li{
+          .open li, .registered li{
             cursor: pointer;
           }
           .home{
@@ -78,6 +89,7 @@ export default function Navbar () {
           }
         `}
       </style>
+
       <style jsx global>
           {`
             .test{
@@ -85,44 +97,37 @@ export default function Navbar () {
             }
           `}
       </style>
+
       {logged ? (
           hidden ? (        
           <ul className='registered animate__animated animate__fadeInLeft'>
             <li className='image'>
               <Image className='test' src={Mati} alt="imgProfile" width={300} height={300} objectFit="cover" placeholder="blur"/>
             </li>
-            <li style={{cursor: "pointer"}} onClick={() => setHidden(hidden ? false : true)}>
-              ←
+            <li onClick={() => setHidden(hidden ? false : true)}>
+              <Image src={backArrow} alt='closeBar' width={20} height={20} />
             </li>
-            <li>
-              <a className={router.pathname === "/about" ? "active" : ""}>
+            <li className={router.pathname === "/about" ? "active" : ""}>
                 <Link href='/about'>About me</Link>
-              </a>
             </li>
-            <li>
-              <a className={router.pathname === "/skills" ? "active" : ""}>
+            <li className={router.pathname === "/skills" ? "active" : ""}>
                 <Link href='/skills'>Skills</Link>
-              </a>
             </li>
-            <li>
-              <a className={router.pathname === "/projects" ? "active" : ""}>
+            <li className={router.pathname === "/projects" ? "active" : ""}>
                 <Link href='/projects'>Projects</Link>
-              </a>
             </li>
-            <li>
-              <a className={router.pathname === "/certificates" ? "active" : ""}>
+            <li className={router.pathname === "/certificates" ? "active" : ""}>
                 <Link href='/certificates'>Certificates</Link>
-              </a>
             </li>
-            <li>
-              <a className={router.pathname === "/contact" ? "active" : ""}>
+            <li className={router.pathname === "/contact" ? "active" : ""}>
                 <Link href='contact'>Contact me</Link>
-              </a>
             </li>
           </ul>
         ) : (
           <ul className='open'>
-            <li onClick={() => setHidden(hidden ? false : true)}> → </li>
+            <li onClick={() => setHidden(hidden ? false : true)}> 
+              <Image src={nextArrow} alt="openBar" width={20} height={20}/>
+            </li>
           </ul>
         )
       ) : (
@@ -134,6 +139,7 @@ export default function Navbar () {
         </ul>
       )}
     </nav>
-    </>
+
+    </div>
   );
 };

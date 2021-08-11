@@ -1,14 +1,17 @@
+import { useEffect, useState } from 'react'
 import '../styles/globals.css'
 import Navbar from '../components/navbar/Navbar'
 import Init from '../pages/index'
 
 function MyApp({ Component, pageProps }) {
+  
+  const [logged,setLogged] = useState("")
 
-  let logged
-
-  if (typeof window !== "undefined") {
-    logged = localStorage.getItem("name")
-  }
+  useEffect(() => {
+    if (localStorage.getItem("name")) {
+      setLogged(localStorage.getItem("name"))
+    }
+  },[])
 
   return (
     <div>

@@ -1,6 +1,32 @@
+import { useEffect, useState } from 'react'
+
 const Home = () => {
+    
+    const [logged,setLogged] = useState("")
+
+    useEffect(() => {
+      if (localStorage.getItem("name")) {
+        setLogged(localStorage.getItem("name"))
+      }
+    },[])
+
     return (
-        <h1 style={{margin: 0}}>Hola soy un home</h1>
+        <div>
+            <style jsx>
+                {`
+                    h1{
+                      margin: 0;  
+                    } 
+                `}
+            </style>
+            {logged ? (
+               <h1>Hi {logged}!!</h1>   
+            ) : (
+                <>
+                </>
+            )}
+        </div>
+        
     )
 }
 

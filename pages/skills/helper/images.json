@@ -1,0 +1,55 @@
+{
+        "frameworks": [
+            {
+                "name": "react",
+                "id": 1,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/react_hzq8a8.png"
+            },
+            {
+                "name": "express",
+                "id": 2,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/express_nfcs85.png"
+            },
+            {
+                "name": "node",
+                "id": 3,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/nodejs_fp9d4h.png"
+            },
+            {
+                "name": "sequelize",
+                "id": 4,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/sequelize_u5371p.png"
+            },
+            {
+                "name": "next",
+                "id": 5,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/nextjs_trc4dn.png"
+            },
+            {
+                "name": "javascript",
+                "id": 6,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/javascript_anhdfo.png"
+            },
+            {
+                "name": "css",
+                "id": 7,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/css_fsm4g4.png"
+            },
+            {
+                "name": "html",
+                "id": 8,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/html_r4zgos.png"
+            },
+            {
+                "name": "postgres",
+                "id": 9,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/postgresql_kowtyn.png"
+            },
+            {
+                "name": "server",
+                "id": 10,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/microsoft_sqlserver_icnam5.png"
+            }
+        ]
+
+}
