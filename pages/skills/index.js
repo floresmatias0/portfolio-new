@@ -33,57 +33,9 @@ const Skills = () => {
 
   return (
     <div className='container'>
-
-      <style jsx>
-        {`
-          .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid gray;
-          }
-          .container h1{
-            text-align: center;
-            font-family: "Indie Flower", cursive;
-          }
-          ul{
-            display: flex;
-            width:100%;
-            flex-direction: row;
-            justify-content: space-around;
-            padding: 0;
-            list-style: none;
-          }
-          ul li{
-            width:10em;
-            margin: 1em;
-            min-height:5em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            background: #eaedf2;
-            border-radius: 5px;
-          }
-          .contentCards{
-            width: 40em;
-          }
-        `}
-      </style>
-      <style jsx global>
-        {`
-          .image{
-            width:100%;
-            border-radius: 5px;
-          }
-        `}
-      </style>
       <h1>Skills</h1>
-
       <div className='contentCards'>
-        <ul>
+        <ul className="cardsUp">
           <li onClick={() => handleChange('react', cards, setCards)} className={cards.react ? `animate__animated animate__flipInY animate__slow	2s` : ''}>
             <Image className='image' src={cards.react ? react : interrogacion} alt="react" />
           </li>
@@ -100,7 +52,7 @@ const Skills = () => {
             <Image className='image' src={cards.next ? nextjs : interrogacion} alt='nextjs' />
           </li>
         </ul>
-        <ul>
+        <ul className="cardsDown">
           <li onClick={() => handleChange('javascript', cards, setCards)} className={cards.javascript ? `animate__animated animate__flipInY animate__slow	2s` : ''}>
             <Image className='image' src={cards.javascript ? javascript : interrogacion} alt="javascript" />
           </li>

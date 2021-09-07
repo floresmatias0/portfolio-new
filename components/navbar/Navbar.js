@@ -38,7 +38,7 @@ export default function Navbar () {
           @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
           nav{
             width: 2em;
-            height: 100vh;
+            height: 100%;
           }
           .registered, .home, .open{
             height:100%;

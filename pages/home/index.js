@@ -19,12 +19,7 @@ const Home = () => {
                     } 
                 `}
             </style>
-            {logged ? (
-               <h1>Hi {logged}!!</h1>   
-            ) : (
-                <>
-                </>
-            )}
+            {logged ? <h1>Hi {logged}!!</h1> : ""}
         </div>
         
     )

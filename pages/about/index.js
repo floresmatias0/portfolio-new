@@ -1,20 +1,6 @@
 const About = () => {
   return (
     <div className="container">
-      <style jsx>
-        {`
-          .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-          .contentAbout{
-              width: 30em;
-          }
-        `}
-      </style>
       <h1>About me</h1>
       <div className='contentAbout'>
         <p>

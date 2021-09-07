@@ -1,0 +1,243 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    font-family: "Indie Flower", cursive;
+    h1{
+      text-align: center;
+      font-family: "Indie Flower", cursive;
+    }
+    h3{
+      margin: 0;
+    }
+  }
+  .hiddenCode {
+    display: none;
+  }
+  .displayName,
+  .displayCode {
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .inputName, .inputCode {
+    width: 100%;
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 6px black;
+    outline: none;
+    font-family: "Indie Flower", cursive;
+    font-size: 1.1rem;
+    margin-top: .5em;
+    padding: .3em !important;
+    text-align: center;
+    &::placeholder{
+      text-align: center;
+    }
+  }
+  .titleInput{
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .send {
+    font-family: "Indie Flower", cursive;
+    border: none;
+    width: 100px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: .9rem;
+    cursor: pointer;
+    margin: .6em;
+    padding: .2em;
+    border-radius: .3em;
+    background-color: #001529;
+    &:active{
+      transform: scale(0.95);
+    }
+  }
+  .errors{
+    margin: 0;
+    margin: .2rem 0 0 0;
+    padding: 0;
+    color: #FF0000;
+    font-weight: bold;
+  }
+  .buttons {
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slideRight {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+  .slideRight li {
+    padding: 1em;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px #FFFFFF inset;
+    border-radius: .5em;
+    margin-top: .4em;
+    margin-bottom: .4em;
+    color: #FFFFFF;
+    background-color: #0015297c;
+    cursor: pointer;
+  }
+  .slideRight li:active {
+    transform: scale(0.9);
+  }
+  .footer {
+    width: 100%;
+    height: 100px;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  .contentAbout{
+    width: 30em;
+  }
+  .image{
+    width:100%;
+    border-radius: 5px;
+  }
+  .cardsUp, .cardsDown{
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .cardsUp li, .cardsDown li{
+    width:10em;
+    margin: 1em;
+    min-height:5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #eaedf2;
+    border-radius: 5px;
+  }
+  .contentCards{
+    width: 40em;
+    margin: 0 auto;
+  }  
+  .contentSlider{
+    width: 40em;
+  }
+  .imageSlider{
+    width: 100%;
+    height: 200px;
+    min-height: 300px;
+    border-radius: .5em;
+  }
+  .buttonSelection{
+    width: 2em;
+  }
+  .buttonPage{
+    font-size: 1.1rem;
+  }
+  .buttonSelection, .buttonPage{
+    padding: .5em;
+    margin: .5em;
+    color:#FFFFFF;
+    background-color: #001529;
+    border-radius: .5em;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    &:active{
+      transform: scale(0.95);
+    }
+    &:hover{
+      color: #808080;
+    }
+  }
+  .skills{
+    padding-top: 1em;
+    ul{
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+      li{
+        margin: .5em;
+        border: 1.5px solid #001529;
+        background-color: #00152960;
+        border-radius: .5em;
+        padding: .5em;
+        font-size: .7rem;
+        font-weight: bold;
+        color: #FFFFFF;
+      }
+    }
+  }
+  @media screen and (max-width:800px) {
+    .contentSlider{
+      width: 30em;
+    }
+    .imageSlider{
+      min-height: 250px;
+    }
+  }
+  @media screen and (max-width:600px) {
+
+    .displayName,
+    .displayCode {
+      width: 100%;
+    }
+    .displayCode {
+      margin: 0;
+    }
+    .inputName, .inputCode {
+      width: 90%;
+    }
+    .inputCode {
+      margin: .5em auto;
+    }
+    .contentSlider{
+      width: 60%;
+    }
+    .imageSlider{
+      min-height: 200px;
+    }
+    .contentAbout{
+      width: 90%;
+    }
+    .contentCards{
+      width: 80%;
+    }
+    .cardsUp li, .cardsDown li{
+      width:14em;
+      margin: .1em;
+    }
+  }
+  @media screen and (max-width:450px) {
+    .imageSlider{
+      height: 150px;
+      min-height: 150px ;
+    }
+  }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import '../styles/globals.css'
 import Navbar from '../components/navbar/Navbar'
 import Init from '../pages/index'
+import '../styles/index.scss';
 
 function MyApp({ Component, pageProps }) {
   

@@ -1,28 +1,39 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Head from "next/head";
+import { Formik, Form, Field } from 'formik';
+import Swal from 'sweetalert2';
 
-export default function Home() {
+const Home = () => {
   var aux = [];
   var codes = ["432765", "897654", "532176"];
   const router = useRouter();
 
-  useEffect(() => {
-    if(router.pathname === "/" && localStorage.getItem("name")) {
-      router.push("/home");
-    }
-  },[]);
-
   const [numberCode, setNumberCode] = useState("");
+  const [hidden, setHidden] = useState(false);
+  const [name, setName] = useState("")
+  const [codeRandom, setCodeRandom] = useState("");
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
   const handleChange = (e) => setNumberCode(numberCode.concat(e));
 
   const handleErase = () =>
     setNumberCode(numberCode.substring(0, numberCode.length - 1));
 
-  const handleEnter = () => {
+  const handleEnter = (name) => {
     if (
       numberCode === "432765" ||
       numberCode === "897654" ||
@@ -31,150 +42,36 @@ export default function Home() {
       let storage = localStorage.getItem("name");
       if (storage) {
         localStorage.clear();
-        localStorage.setItem("name", input.name);
+        localStorage.setItem("name", name);
       } else {
-        localStorage.setItem("name", input.name);
-        router.push("/home");
+        localStorage.setItem("name", name);
       }
-    } else {
-      alert("INTENTA DE NUEVO");
-    }
-  };
 
-  const [hidden, setHidden] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [input, setInput] = useState({
-    name: "",
-  });
-
-  const handleInputChange = (e) => {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
-    });
-    setErrors(
-      validate({
-        ...input,
-        [e.target.name]: e.target.value,
+      Toast.fire({
+        icon: 'success',
+        title: 'Well Done!'
       })
-    );
-  };
+      .then(() => {
+          router.push({pathname:"/home"});
+      })
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!input.name) {
-      setErrors({
-        name: "name is required!!",
-      });
     } else {
-      setInput({
-        ...input,
-        [e.target.name]: aux.push(input.name),
+      Swal.fire({
+        icon: 'error',
+        html: `<p>sorry something wrong</p>`,
+        confirmButtonText: 'try again'
       });
-      setHidden(true);
     }
   };
-
-  const validate = (input) => {
-    let errors = {};
-    if (!input.name) {
-      errors.name = "name is required!!";
-    }
-    return errors;
-  };
-  const [codeRandom, setCodeRandom] = useState("");
 
   const code = () => {
     var aleatorio = Math.random() * codes.length;
     var aux = Math.floor(aleatorio);
     setCodeRandom(codes[aux]);
   };
+
   return (
     <div className="container">
-      <style jsx>
-        {`
-          .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: "Indie Flower", cursive;
-          }
-          .hiddenCode {
-            display: none;
-          }
-          .displayName,
-          .displayCode {
-            width: 20em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 1em;
-            margin-bottom: 1em;
-          }
-          .inputName {
-            width: 10em;
-            border: none;
-            border-radius: 0.5em;
-            box-shadow: 0px 0px 6px black;
-            outline: none;
-            text-align: center;
-          }
-          .inputName::placeholder {
-            text-align: center;
-          }
-          .send {
-            font-family: "Indie Flower", cursive;
-            border: none;
-            cursor: pointer;
-          }
-          .send:active {
-            transform: scale(0.95);
-          }
-          .buttons {
-            width: 20em;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .slideRight {
-            display: flex;
-            flex-direction: row;
-            list-style: none;
-            justify-content: space-around;
-            padding: 0;
-            margin: 0;
-          }
-          .slideRight li {
-            padding: 1em;
-            box-shadow: 0px 0px 5px;
-            border-radius: 0.5em;
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-            cursor: pointer;
-          }
-          .slideRight li:active {
-            transform: scale(0.9);
-          }
-          .footer {
-            width: 100%;
-            height: 100px;
-            border-top: 1px solid #eaeaea;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .footer a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1;
-          }
-        `}
-      </style>
       <Head>
         <title>Matias Flores</title>
         <meta name="description" content="Generated by create next app" />
@@ -187,29 +84,48 @@ export default function Home() {
         <div>
           <div>
             <div className={hidden ? "hiddenCode" : "displayName"}>
-              <form onSubmit={handleSubmit}>
-                <h2>Please insert your name to continue</h2>
-                <input
-                  autoComplete="off"
-                  className="inputName"
-                  name="name"
-                  placeholder="Name"
-                  type="text"
-                  value={input.name}
-                  onChange={handleInputChange}
-                />
-                {errors.name && errors.name === "name is required!!" ? (
-                  <p className="hatch">{errors.name}</p>
-                ) : (
-                  <p></p>
+              <Formik
+                initialValues={{
+                  name: ''
+                }}
+                validate={(fields) => {
+                  let errors = {}
+
+                  if(!fields.name){
+                    errors.name = 'Please insert name to continue'
+                  }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.name)){
+                    errors.name = 'The name can only contain letters and spaces'
+                  }
+
+                  return errors
+                }}
+                onSubmit={(fields) => {
+                  if (fields.name) {
+                    setName(fields.name)
+                    setHidden(true);
+                  }
+                }}
+              >
+                {({ touched,errors }) => (
+                  <Form>
+                      <label className="titleInput">What your name?</label>
+                      <Field
+                        className="inputName"
+                        name="name"
+                        placeholder="John Doeh"
+                        type="text"
+                      />
+                      {touched.name && errors.name ? <p className="errors">{errors.name}</p> : ""}
+
+                      <button className="send" type="submit" onClick={code}>
+                        Send
+                      </button>
+                  </Form>
                 )}
-                <button className="send" type="submit" onClick={code}>
-                  Send
-                </button>
-              </form>
+              </Formik>
             </div>
             <div className={hidden ? "displayCode" : "hiddenCode"}>
-              <h2>your code is {codeRandom}</h2>
+              <label className="titleInput">your code is {codeRandom}</label>
               <input disabled value={numberCode} className="inputCode" />
             </div>
             <div className={hidden ? "buttons" : "hiddenCode"}>
@@ -231,7 +147,7 @@ export default function Home() {
               <ul className="slideRight">
                 <li onClick={handleErase}>erase</li>
                 <li onClick={() => handleChange("0")}>0</li>
-                <li onClick={() => handleEnter()}>enter</li>
+                <li onClick={() => handleEnter(name)}>enter</li>
               </ul>
             </div>
           </div>
@@ -254,3 +170,4 @@ export default function Home() {
   );
 }
 
+export default Home;
