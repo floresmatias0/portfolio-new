@@ -1,37 +1,72 @@
+import { Formik,Form,Field } from "formik";
+
 const Contact = () => {
     
     return (
         <div className='container'>
-            <style jsx>
-                {`
-                .container{
-                    width:100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-                `}
-            </style>
             <h1>Contact</h1>
             <div>
-                <div>
-                    <form>
-                        <label >Name</label>
-                        <input  autoComplete="off" type="text" placeholder="name" name="name"/>
+                <Formik
+                    initialValues={{
+                        nick: "",
+                        email: "",
+                        subject: "",
+                        message: ""
+                    }}
+                    validate={(fields) => {
+                        let errors = {}
+                        //Validate nick
+                        if(!fields.nick){
+                            errors.nick = "Please insert name to continue"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.nick)){
+                            errors.nick = "The name can only contain letters and spaces"
+                        }
+                        //Validate email
+                        if(!fields.email){
+                            errors.email = 'Please insert email to continue'
+                        }else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(fields.email)){
+                            errors.email = 'The email can only contain letters, numbers, periods, scripts and underscore'
+                        }
+                        //Validate subject
+                        if(!fields.subject){
+                            errors.subject = "Please insert subject of the topic"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.subject)){
+                            errors.subject = "The subject can only contain letters and spaces"
+                        }
+                        //Validate message
+                        if(!fields.message){
+                            errors.message = "Please insert message to send"
+                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.message)){
+                            errors.message = "The subject can only contain letters and spaces"
+                        }
+                        return errors
+                    }}
+                    onSubmit={(fields) => {
+                        console.log(fields)
+                    }}
+                >
+                    {({errors,touched}) => {
+                    <Form>
+                        <label>Name</label>
+                        <Field type="text" placeholder="name" name="nick"/>
+                        {touched.nick && errors.nick ? <p>{errors.nick}</p> : ""}
 
-                        <label >Email</label>
-                        <input  autoComplete="off" type="email" placeholder="email" name="email"/>
+                        <label>Email</label>
+                        <Field type="email" placeholder="email" name="email"/>
+                        {touched.email && errors.email ? <p>{errors.email}</p> : ""}
 
-                        <label >Subject</label>
-                        <input  autoComplete="off" type="text" placeholder="subject" name="subject"/>
+                        <label>Subject</label>
+                        <Field type="text" placeholder="subject" name="subject"/>
+                        {touched.subject && errors.subject ? <p>{errors.subject}</p> : ""}
 
-                        <label >Message</label>
-                        <textarea  name="message"/>
-                        
-                        <input  type="submit" value="send"/>
-                    </form>
-                </div>
+                        <label>Message</label>
+                        <Field as="textarea" name="message"/>
+                        {touched.message && errors.message ? <p>{errors.message}</p> : ""}
+
+                      <button type="submit">send</button>
+                    </Form>;    
+                    }}
+                </Formik>
 
             </div>
         </div>

@@ -11,7 +11,7 @@ const Home = () => {
     },[])
 
     return (
-        <div>
+        <div className="container">
             <style jsx>
                 {`
                     h1{

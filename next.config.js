@@ -5,4 +5,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  images: {
+    domains: ['certificates.soyhenry.com','res.cloudinary.com','www.efset.org'],
+  },
 }
