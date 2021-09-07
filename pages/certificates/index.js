@@ -9,6 +9,7 @@ const Certificates = () => {
 
     return (
         <div className='container'>
+            <h1>Certificates</h1>
             <div className="contentCertificates">
                 <div className="certificate">
                    <Image

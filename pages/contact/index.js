@@ -4,7 +4,7 @@ const Contact = () => {
     
     return (
         <div className='container'>
-            <h1>Contact</h1>
+            <h1>Contact me</h1>
             <div>
                 <Formik
                     initialValues={{
@@ -45,29 +45,28 @@ const Contact = () => {
                         console.log(fields)
                     }}
                 >
-                    {({errors,touched}) => {
-                    <Form>
+                    {({errors,touched}) => (
+                    <Form className="form">
                         <label>Name</label>
-                        <Field type="text" placeholder="name" name="nick"/>
+                        <Field type="text" placeholder="John Doe" name="nick"/>
                         {touched.nick && errors.nick ? <p>{errors.nick}</p> : ""}
 
                         <label>Email</label>
-                        <Field type="email" placeholder="email" name="email"/>
+                        <Field type="email" placeholder="correo@correo.com" name="email"/>
                         {touched.email && errors.email ? <p>{errors.email}</p> : ""}
 
                         <label>Subject</label>
-                        <Field type="text" placeholder="subject" name="subject"/>
+                        <Field type="text" placeholder="Job offer" name="subject"/>
                         {touched.subject && errors.subject ? <p>{errors.subject}</p> : ""}
 
                         <label>Message</label>
-                        <Field as="textarea" name="message"/>
+                        <Field as="textarea" placeholder="Lorem ipsum..." name="message"/>
                         {touched.message && errors.message ? <p>{errors.message}</p> : ""}
 
-                      <button type="submit">send</button>
-                    </Form>;    
-                    }}
+                      <button className="buttonMail" type="submit">send</button>
+                    </Form>   
+                    )}
                 </Formik>
-
             </div>
         </div>
     )

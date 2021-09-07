@@ -1,3 +1,15 @@
+@font-face {
+  font-family: Avenir;
+  src: url('../assets/fonts/Avenir\ Roman.otf');
+}
+@font-face {
+  font-family: Gotham;
+  src: url('../assets/fonts/Gotham-MediumItalic.otf');
+}
+@font-face {
+  font-family: GothamV2;
+  src: url('../assets/fonts/Gotham-Medium.otf');
+}
 .container {
     width: 100%;
     display: flex;
@@ -6,10 +18,10 @@
     align-items: center;
     text-align: center;
     height: 100vh;
-    font-family: "Indie Flower", cursive;
+    font-family: Avenir;
     h1{
       text-align: center;
-      font-family: "Indie Flower", cursive;
+      font-family: Gotham;
     }
     h3{
       margin: 0;
@@ -158,7 +170,7 @@
   .buttonPage{
     font-size: 1.1rem;
   }
-  .buttonSelection, .buttonPage, .buttonCertificate{
+  .buttonSelection, .buttonPage, .buttonCertificate, .buttonMail{
     padding: .5em;
     margin: .5em;
     color:#FFFFFF;
@@ -207,6 +219,28 @@
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .form{
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    input, textarea{
+      padding: .5em;
+      outline: none;
+      border: none;
+      border-radius: .2em;
+    }
+    p{
+      color: #FF0000;
+      font-weight: 400;
+      margin: 0;
+      text-align: center;
+    }
+  }
+  .buttonMail{
+    width: 5em;
+    margin: 0 auto;
   }
   @media screen and (max-width:800px) {
     .contentSlider{

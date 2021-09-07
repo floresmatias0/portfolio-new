@@ -32,7 +32,7 @@ const Projects = () => {
           <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
         </Head>
-        <h2>Projects</h2>
+        <h1>Own projects</h1>
           <div className="contentSlider">
             {slider && slider === 1 ? (
               <>

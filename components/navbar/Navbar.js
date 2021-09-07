@@ -6,8 +6,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import Mati from '../../assets/images/IMG_8764(edit).jpg'
-import backArrow from '../../assets/images/back-arrow.png'
-import nextArrow from '../../assets/images/next-arrow.png'
+import backArrow from '../../assets/images/arrow-back.svg'
+import nextArrow from '../../assets/images/arrow.svg'
 
 export default function Navbar () {
   let router = useRouter()
@@ -35,12 +35,11 @@ export default function Navbar () {
 
       <style jsx>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
           nav{
             width: 2em;
             height: 100%;
           }
-          .registered, .home, .open{
+          .registered, .open{
             height:100%;
             padding: 0;
             list-style: none;
@@ -48,7 +47,7 @@ export default function Navbar () {
             flex-direction: column;
             background-color: #001529;
           }
-          .open, .home{
+          .open{
             width: 2em;
             margin: 0;
           }
@@ -59,8 +58,6 @@ export default function Navbar () {
           .registered{
             width:6em;
             justify-content: space-between;
-            font-family: 'Lobster', cursive;
-            transition-duration: 250ms;
             margin: 0;
             padding-top: 2em;
             padding-bottom: 2em;
@@ -69,20 +66,17 @@ export default function Navbar () {
             width:100%;
             text-align:center;
             color: gray;
+            font-family: GothamV2;
+            font-size: .7rem;
           }
           .active{
             color: #FFFFFF;
-            text-decoration: underline #FFFFFF;
           }
           li:hover{
             color: #FFFFFF;
           }
           .open li, .registered li{
             cursor: pointer;
-          }
-          .home{
-            justify-content: space-around;
-            font-family: 'Lobster', cursive;
           }
           .image{
             padding: 0.5em;
@@ -108,19 +102,19 @@ export default function Navbar () {
               <Image src={backArrow} alt='closeBar' width={20} height={20} />
             </li>
             <li className={router.pathname === "/about" ? "active" : ""}>
-                <Link href='/about'>About me</Link>
+                <Link href='/about'>ABOUT</Link>
             </li>
             <li className={router.pathname === "/skills" ? "active" : ""}>
-                <Link href='/skills'>Skills</Link>
-            </li>
-            <li className={router.pathname === "/projects" ? "active" : ""}>
-                <Link href='/projects'>Projects</Link>
+                <Link href='/skills'>SKILLS</Link>
             </li>
             <li className={router.pathname === "/certificates" ? "active" : ""}>
-                <Link href='/certificates'>Certificates</Link>
+                <Link href='/certificates'>DEGREES</Link>
             </li>
             <li className={router.pathname === "/contact" ? "active" : ""}>
-                <Link href='contact'>Contact me</Link>
+                <Link href='contact'>CONTACT</Link>
+            </li>
+            <li className={router.pathname === "/projects" ? "active" : ""}>
+                <Link href='/projects'>PROJECTS</Link>
             </li>
           </ul>
         ) : (
@@ -130,14 +124,7 @@ export default function Navbar () {
             </li>
           </ul>
         )
-      ) : (
-        <ul className='home'>
-          <li>H</li>
-          <li>O</li>
-          <li>M</li>
-          <li>E</li>
-        </ul>
-      )}
+      ) : ("")}
     </nav>
 
     </div>

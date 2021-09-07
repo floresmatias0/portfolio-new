@@ -33,7 +33,7 @@ const Skills = () => {
 
   return (
     <div className='container'>
-      <h1>Skills</h1>
+      <h1>Learned skills</h1>
       <div className='contentCards'>
         <ul className="cardsUp">
           <li onClick={() => handleChange('react', cards, setCards)} className={cards.react ? `animate__animated animate__flipInY animate__slow	2s` : ''}>
