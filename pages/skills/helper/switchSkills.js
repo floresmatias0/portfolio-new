@@ -31,20 +31,11 @@ export const handleChange = (type,cards,setCards) => {
         case 'server' :
             !cards.server ? setCards({...cards, server : true}) : setCards({...cards, server : false});
             break;
-        case 'reactBis' :
-            !cards.reactBis ? setCards({...cards, reactBis : true}) : setCards({...cards, reactBis : false});
+        case 'continue' :
+            !cards.continue ? setCards({...cards, continue : true}) : setCards({...cards, continue : false});
             break;
-        case 'expressBis' :
-            !cards.expressBis ? setCards({...cards, expressBis : true}) : setCards({...cards, expressBis : false});
-            break;
-        case 'nodeBis' :
-            !cards.nodeBis ? setCards({...cards, nodeBis : true}) : setCards({...cards, nodeBis : false});
-            break;
-        case 'sequelizeBis' :
-            !cards.sequelizeBis ? setCards({...cards, sequelizeBis : true}) : setCards({...cards, sequelizeBis : false});
-            break;
-        case 'nextBis' :
-            !cards.nextBis ? setCards({...cards, nextBis : true}) : setCards({...cards, nextBis : false});
+        case 'powerBi' :
+            !cards.powerBi ? setCards({...cards, powerBi : true}) : setCards({...cards, powerBi : false});
             break;
         default:
             console.log('error')

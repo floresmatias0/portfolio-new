@@ -31,7 +31,7 @@ export default function Navbar () {
       />
     </Head>
 
-    <nav>
+    <nav className={logged ? "" : "ocult"}>
 
       <style jsx>
         {`
@@ -46,6 +46,9 @@ export default function Navbar () {
             display: flex;
             flex-direction: column;
             background-color: #001529;
+          }
+          .ocult{
+            display: none;
           }
           .open{
             width: 2em;

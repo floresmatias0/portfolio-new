@@ -36,9 +36,8 @@ const Contact = () => {
                         //Validate message
                         if(!fields.message){
                             errors.message = "Please insert message to send"
-                        }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.message)){
-                            errors.message = "The subject can only contain letters and spaces"
                         }
+                        
                         return errors
                     }}
                     onSubmit={(fields) => {
@@ -63,7 +62,7 @@ const Contact = () => {
                         <Field as="textarea" placeholder="Lorem ipsum..." name="message"/>
                         {touched.message && errors.message ? <p>{errors.message}</p> : ""}
 
-                      <button className="buttonMail" type="submit">send</button>
+                      <button className="buttonMail" type="submit">Send</button>
                     </Form>   
                     )}
                 </Formik>
