@@ -49,6 +49,11 @@
                 "name": "server",
                 "id": 10,
                 "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1628648785/portfolio/microsoft_sqlserver_icnam5.png"
+            },
+            {
+                "name": "continue",
+                "id": 11,
+                "image": "https://res.cloudinary.com/djnhaprmj/image/upload/v1631080671/portfolio/continue_fhmeus.jpg"
             }
         ]
 

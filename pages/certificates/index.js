@@ -19,7 +19,7 @@ const Certificates = () => {
                     objectFit="cover"
                     />
                     <button 
-                    className="buttonCertificate animate__animated animate__rubberBand animate__infinite animate__delay-4s" 
+                    className="buttonCertificate" 
                     onClick={() => window.location.href=`${henryCertificate}`}>
                     view certicate
                     </button> 
@@ -33,7 +33,7 @@ const Certificates = () => {
                     height={153.94}
                     />
                     <button
-                    className="buttonCertificate animate__animated animate__rubberBand animate__infinite animate__delay-4s" 
+                    className="buttonCertificate" 
                     onClick={() => window.location.href=`${utnCertificate}`}>
                     view certicate
                     </button > 
@@ -47,7 +47,7 @@ const Certificates = () => {
                     height={153.94}
                     />
                     <button 
-                    className="buttonCertificate animate__animated animate__rubberBand animate__infinite animate__delay-4s" 
+                    className="buttonCertificate" 
                     onClick={() => window.location.href=`${efsetCertificate}`}>
                     view certicate
                     </button> 
