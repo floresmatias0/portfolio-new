@@ -12,14 +12,14 @@ import nextArrow from '../../assets/images/arrow.svg'
 export default function Navbar () {
   let router = useRouter()
 
-  const [logged, setLogged] = useState("")
+  const [logged, setLogged] = useState(null)
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
     if (localStorage.getItem("name")) {
       setLogged(localStorage.getItem("name"))
     }
-  },[])
+  },[logged])
 
   return (
     <div>

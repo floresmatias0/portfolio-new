@@ -35,9 +35,9 @@ const Projects = () => {
         <h1>Own projects</h1>
           <div className="contentSlider">
             {slider && slider === 1 ? (
-              <>
+              <div className="contentProject">
               <h3>Pokemon</h3>
-              <button className="buttonPage animate__animated animate__pulse animate__infinite" onClick={() => window.location.href=`${pages.pokemon}`}>Go page</button>
+              <button className="buttonPage" onClick={() => window.location.href=`${pages.pokemon}`}>Go page</button>
               <Slider {...settings}>
                 {pokemon.map((el,index) => {
                   return (
@@ -58,11 +58,11 @@ const Projects = () => {
                   <li>CSS modules</li>
                 </ul>
               </div>
-              </>   
+              </div>   
             ) : slider === 2 ? (
-              <>
+              <div className="contentProject">
               <h3>Videogames</h3>
-              <button className="buttonPage animate__animated animate__pulse animate__infinite" onClick={() => window.location.href=`${pages.videogames}`}>Go page</button>
+              <button className="buttonPage" onClick={() => window.location.href=`${pages.videogames}`}>Go page</button>
               <Slider {...settings}>
                 {videogame.map((el,index) => {
                   return (
@@ -83,11 +83,11 @@ const Projects = () => {
                   <li>CSS modules</li>
                 </ul>
               </div>
-              </>
+              </div>
             ) : slider === 3 ? (
-              <>
+              <div className="contentProject">
               <h3>Weather</h3>
-              <button className="buttonPage animate__animated animate__pulse animate__infinite" onClick={() => window.location.href=`${pages.clima}`}>Go page</button>
+              <button className="buttonPage" onClick={() => window.location.href=`${pages.clima}`}>Go page</button>
               <Slider {...settings}>
                 {weather.map((el,index) => {
                   return (
@@ -104,11 +104,11 @@ const Projects = () => {
                   <li>CSS</li>
                 </ul>
               </div>
-              </>
+              </div>
             ): slider === 4 ? (
-              <>
+              <div className="contentProject">
               <h3>Movies</h3>
-              <button className="buttonPage animate__animated animate__pulse animate__infinite" onClick={() => window.location.href=`${pages.movies}`}>Go page</button>
+              <button className="buttonPage" onClick={() => window.location.href=`${pages.movies}`}>Go page</button>
               <Slider {...settings}>
                 {movies.map((el,index) => {
                   return (
@@ -125,11 +125,11 @@ const Projects = () => {
                   <li>CSS</li>
                 </ul>
               </div>
-              </>
+              </div>
             ): slider === 5 ? (
-              <>
+              <div className="contentProject">
               <h3>Marvel</h3>
-              <button className="buttonPage animate__animated animate__pulse animate__infinite" onClick={() => window.location.href=`${pages.marvel}`}>Go page</button>
+              <button className="buttonPage" onClick={() => window.location.href=`${pages.marvel}`}>Go page</button>
               <Slider {...settings}>
                 {marvel.map((el,index) => {
                   return (
@@ -146,11 +146,11 @@ const Projects = () => {
                   <li>CSS</li>
                 </ul>
               </div>
-              </>
+              </div>
             ): slider === 6 ? (
-              <>
+              <div className="contentProject">
               <h3>Rick and Morty</h3>
-              <button className="buttonPage animate__animated animate__pulse animate__infinite" onClick={() => window.location.href=`${pages.rickandmorty}`}>Go page</button>
+              <button className="buttonPage" onClick={() => window.location.href=`${pages.rickandmorty}`}>Go page</button>
               <Slider {...settings}>
                 {rickandmorty.map((el,index) => {
                   return (
@@ -171,8 +171,8 @@ const Projects = () => {
                   <li>CSS</li>
                 </ul>
               </div>
-              </>
-            ):("")}
+              </div>
+            ):(<></>)}
             
           </div>
           <div className="buttonSlider">

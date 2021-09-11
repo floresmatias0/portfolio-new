@@ -1,18 +1,8 @@
-import { useEffect, useState } from 'react'
 import '../styles/globals.css'
 import Navbar from '../components/navbar/Navbar'
-import Init from '../pages/index'
 import '../styles/index.scss';
 
 function MyApp({ Component, pageProps }) {
-  
-  const [logged,setLogged] = useState("")
-
-  useEffect(() => {
-    if (localStorage.getItem("name")) {
-      setLogged(localStorage.getItem("name"))
-    }
-  },[])
 
   return (
     <div>
@@ -26,12 +16,7 @@ function MyApp({ Component, pageProps }) {
         `}
       </style>
       <Navbar/>
-      {logged ? (
-        <Component {...pageProps} />
-      ):(
-        <Init/>
-      )}
-      
+      <Component {...pageProps} />
     </div>
   )
 }

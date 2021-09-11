@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -6,11 +6,24 @@ import Head from "next/head";
 import { Formik, Form, Field } from 'formik';
 import Swal from 'sweetalert2';
 
-const Home = () => {
+const Init = () => {
+
+  const router = useRouter();
+  const [logged,setLogged] = useState(null)
+  
+  useEffect(() => {
+    if (localStorage.getItem("name")) {
+      let visit = localStorage.getItem("name")
+      setLogged(visit)
+    }
+    
+    logged ? router.push("/home") : ""
+
+  },[logged])
+
   var aux = [];
   var codes = ["432765", "897654", "532176"];
-  const router = useRouter();
-
+  
   const [numberCode, setNumberCode] = useState("");
   const [hidden, setHidden] = useState(false);
   const [name, setName] = useState("")
@@ -170,4 +183,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default Init;
