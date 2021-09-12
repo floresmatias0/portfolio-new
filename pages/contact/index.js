@@ -63,7 +63,7 @@ const Contact = () => {
                         setLoading(true)
                         let options = {
                             method : 'POST',
-                            url: 'http://localhost:3001/send-email',
+                            url: 'https://mattportfolio-email.herokuapp.com/send-email',
                             header:{
                                 ContentType: 'application/json',   
                             },
