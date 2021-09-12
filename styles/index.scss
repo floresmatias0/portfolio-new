@@ -22,6 +22,7 @@
     h1{
       text-align: center;
       font-family: Gotham;
+      margin: 0;
     }
     h3{
       margin: 0;
@@ -183,20 +184,15 @@
   }  
 
   //SLIDER
-  .contentSlider{
-    width: 40em;
-  }
   .contentProject{
-    width: 75%;
-    margin: 0 auto;
+    width: 30em;
   }
   .imageSlider{
     width: 100%;
-    height: 200px;
-    min-height: 300px;
-    border-radius: .5em;
+    img{
+      min-height: 250px;
+    }
   }
-
   //PROJECTS
   .buttonSelection{
     width: 2em;
@@ -298,12 +294,6 @@
     .inputCode {
       margin: .5em auto;
     }
-    .contentSlider{
-      width: 60%;
-    }
-    .imageSlider{
-      min-height: 200px;
-    }
     .contentAbout{
       width: 90%;
     }
@@ -316,11 +306,13 @@
     }
   }
   @media screen and (max-width:450px) {
-    .imageSlider{
-      height: 150px;
-      min-height: 150px ;
-    }
     .contentProject{
       width: 90%
+    }
+    .imageSlider{
+      min-height: 200px !important;
+      img{
+        min-height: 200px !important;
+      }
     }
   }

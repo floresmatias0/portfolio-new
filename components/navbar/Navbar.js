@@ -32,7 +32,13 @@ export default function Navbar () {
     </Head>
 
     <nav className={logged ? "" : "ocult"}>
-
+      <style jsx global>
+        {`
+        nav{
+          z-index: 99;
+        }
+        `}
+      </style>
       <style jsx>
         {`
           nav{

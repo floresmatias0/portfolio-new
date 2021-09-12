@@ -1,6 +1,25 @@
 import { Formik,Form,Field } from "formik";
+import Swal from 'sweetalert2'
+import axios from 'axios';
+import { useState } from "react";
+import Image from "next/image"
+import pacman from "../../assets/images/pacman.gif"
 
 const Contact = () => {
+
+    const [loading, setLoading] = useState(false)
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
     
     return (
         <div className='container'>
@@ -40,8 +59,38 @@ const Contact = () => {
                         
                         return errors
                     }}
-                    onSubmit={(fields) => {
-                        console.log(fields)
+                    onSubmit={async(fields,actions) => {
+                        setLoading(true)
+                        let options = {
+                            method : 'POST',
+                            url: 'http://localhost:3001/send-email',
+                            header:{
+                                ContentType: 'application/json',   
+                            },
+                            data:{
+                                from : fields.nick,
+                                to : fields.email,
+                                subject: fields.subject,
+                                html: `<p>${fields.message}</p>`
+                            }
+                            
+                        }
+                        await axios.request(options)
+                        .then(response => {
+                            setLoading(false)
+                            if(response.statusText === 'Accepted') {
+                                Toast.fire({
+                                icon: 'success',
+                                title: 'Message send, thanks!'
+                            })
+                            }else{
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: 'Oh Oh try again!'
+                                })
+                            }
+                        })
+                        actions.resetForm()
                     }}
                 >
                     {({errors,touched}) => (
@@ -66,6 +115,7 @@ const Contact = () => {
                     </Form>   
                     )}
                 </Formik>
+                {loading ? <Image src={pacman} alt="loading..." width={100} height={100}/> : ""}
             </div>
         </div>
     )

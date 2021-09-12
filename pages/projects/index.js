@@ -1,9 +1,7 @@
 import { useState } from "react";
-import Slider from "react-slick";
 import { pokemon,videogame,weather,movies,marvel,rickandmorty } from "./helper/Images";
-import Head from "next/head";
-
-
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 const Projects = () => {
 
   const [slider, setSlider] = useState(1)
@@ -17,173 +15,85 @@ const Projects = () => {
     rickandmorty: "https://rickandmorty-c69c5.web.app/"
   }
 
-  let settings = {
-    dots: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
-
     return (
       <div className='container'>
-        <Head>
-          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-        </Head>
+      <style jsx global>
+        {`
+        container{
+          z-index: 1;
+        }
+        `}
+      </style>
         <h1>Own projects</h1>
-          <div className="contentSlider">
-            {slider && slider === 1 ? (
-              <div className="contentProject">
-              <h3>Pokemon</h3>
-              <button className="buttonPage" onClick={() => window.location.href=`${pages.pokemon}`}>Go page</button>
-              <Slider {...settings}>
-                {pokemon.map((el,index) => {
-                  return (
-                    <div key={index}>
-                      <img className="imageSlider" src={el.src} alt="prev"/>
-                    </div>
-                  )
-                })}
-              </Slider>
-              <div className="skills">
-                <ul>
-                  <li>ReactJS</li>
-                  <li>React-Redux</li>
-                  <li>NodeJS</li>
-                  <li>Express</li>
-                  <li>PostgreSQL</li>
-                  <li>Sequelize</li>
-                  <li>CSS modules</li>
-                </ul>
-              </div>
-              </div>   
-            ) : slider === 2 ? (
-              <div className="contentProject">
-              <h3>Videogames</h3>
-              <button className="buttonPage" onClick={() => window.location.href=`${pages.videogames}`}>Go page</button>
-              <Slider {...settings}>
-                {videogame.map((el,index) => {
-                  return (
-                    <div key={index}>
-                      <img className="imageSlider" src={el.src} alt="prev"/>
-                    </div>
-                  )
-                })}
-              </Slider> 
-              <div className="skills">
-                <ul>
-                  <li>ReactJS</li>
-                  <li>React-Redux</li>
-                  <li>NodeJS</li>
-                  <li>Express</li>
-                  <li>PostgreSQL</li>
-                  <li>Sequelize</li>
-                  <li>CSS modules</li>
-                </ul>
-              </div>
-              </div>
-            ) : slider === 3 ? (
-              <div className="contentProject">
-              <h3>Weather</h3>
-              <button className="buttonPage" onClick={() => window.location.href=`${pages.clima}`}>Go page</button>
-              <Slider {...settings}>
-                {weather.map((el,index) => {
-                  return (
-                    <div key={index}>
-                      <img className="imageSlider" src={el.src} alt="prev"/>
-                    </div>
-                  )
-                })}
-              </Slider> 
-              <div className="skills">
-                <ul>
-                  <li>ReactJS</li>
-                  <li>React-Redux</li>
-                  <li>CSS</li>
-                </ul>
-              </div>
-              </div>
-            ): slider === 4 ? (
-              <div className="contentProject">
-              <h3>Movies</h3>
-              <button className="buttonPage" onClick={() => window.location.href=`${pages.movies}`}>Go page</button>
-              <Slider {...settings}>
-                {movies.map((el,index) => {
-                  return (
-                    <div key={index}>
-                      <img className="imageSlider" src={el.src} alt="prev"/>
-                    </div>
-                  )
-                })}
-              </Slider> 
-              <div className="skills">
-                <ul>
-                  <li>ReactJS</li>
-                  <li>React-Redux</li>
-                  <li>CSS</li>
-                </ul>
-              </div>
-              </div>
-            ): slider === 5 ? (
-              <div className="contentProject">
-              <h3>Marvel</h3>
-              <button className="buttonPage" onClick={() => window.location.href=`${pages.marvel}`}>Go page</button>
-              <Slider {...settings}>
-                {marvel.map((el,index) => {
-                  return (
-                    <div key={index}>
-                      <img className="imageSlider" src={el.src} alt="prev"/>
-                    </div>
-                  )
-                })}
-              </Slider> 
-              <div className="skills">
-                <ul>
-                  <li>HTML</li>
-                  <li>Javascript</li>
-                  <li>CSS</li>
-                </ul>
-              </div>
-              </div>
-            ): slider === 6 ? (
-              <div className="contentProject">
-              <h3>Rick and Morty</h3>
-              <button className="buttonPage" onClick={() => window.location.href=`${pages.rickandmorty}`}>Go page</button>
-              <Slider {...settings}>
-                {rickandmorty.map((el,index) => {
-                  return (
-                    <div key={index}>
-                      <img className="imageSlider" src={el.src} alt="prev"/>
-                    </div>
-                  )
-                })}
-              </Slider> 
-              <div className="skills">
-                <ul>
-                  <li>ReactJS</li>
-                  <li>React-Redux</li>
-                  <li>NodeJS</li>
-                  <li>Express</li>
-                  <li>GraphQL</li>
-                  <li>Firebase</li>
-                  <li>CSS</li>
-                </ul>
-              </div>
-              </div>
-            ):(<></>)}
-            
-          </div>
-          <div className="buttonSlider">
-            <button className="buttonSelection" onClick={() => setSlider(1)}>1</button>
-            <button className="buttonSelection" onClick={() => setSlider(2)}>2</button>
-            <button className="buttonSelection" onClick={() => setSlider(3)}>3</button>
-            <button className="buttonSelection" onClick={() => setSlider(4)}>4</button>
-            <button className="buttonSelection" onClick={() => setSlider(5)}>5</button>
-            <button className="buttonSelection" onClick={() => setSlider(6)}>6</button>
-          </div>
-
+          <div className="contentProject">
+            { 
+              slider === 1 ? <h2>Pokemon</h2> :
+              slider === 2 ? <h2>Videogames</h2> :
+              slider === 3 ? <h2>Marvel</h2> :
+              slider === 4 ? <h2>Weather</h2> :
+              slider === 5 ? <h2>Movies</h2> :
+              slider === 6 ? <h2>Rick and Morty</h2> :
+              ""
+            }
+            <Carousel showThumbs={false}>
+              {slider === 1 ? pokemon.map((el,index) => {
+                return (
+                  <div key={index} className="imageSlider">
+                    <img src={el.src} alt="prev"/>
+                  </div>
+                )
+              }) : slider === 2 ? videogame.map((el,index) => {
+                return (
+                  <div key={index} className="imageSlider">
+                    <img src={el.src} alt="prev"/>
+                  </div>
+                )
+              }) : slider === 3 ? marvel.map((el,index) => {
+                return (
+                  <div key={index} className="imageSlider">
+                    <img src={el.src} alt="prev"/>
+                  </div>
+                )
+              }) : slider === 4 ? weather.map((el,index) => {
+                return (
+                  <div key={index} className="imageSlider">
+                    <img src={el.src} alt="prev"/>
+                  </div>
+                )
+              }) : slider === 5 ? movies.map((el,index) => {
+                return (
+                  <div key={index} className="imageSlider">
+                    <img src={el.src} alt="prev"/>
+                  </div>
+                )
+              }) : slider === 6 ? rickandmorty.map((el,index) => {
+                return (
+                  <div key={index} className="imageSlider">
+                    <img src={el.src} alt="prev"/>
+                  </div>
+                )
+              }) : ""}
+            </Carousel>
+            <button 
+              className="buttonPage" 
+              onClick={ 
+                slider === 1 ? () => window.location.href=`${pages.pokemon}` :
+                slider === 2 ? () => window.location.href=`${pages.videogames}` :
+                slider === 3 ? () => window.location.href=`${pages.marvel}` :
+                slider === 4 ? () => window.location.href=`${pages.clima}` :
+                slider === 5 ? () => window.location.href=`${pages.movies}` :
+                slider === 6 ? () => window.location.href=`${pages.rickandmorty}` : ""}>
+                  Go page
+            </button>
+            <div>
+              <button className="buttonSelection" onClick={() => setSlider(1)}>1</button>
+              <button className="buttonSelection" onClick={() => setSlider(2)}>2</button>
+              <button className="buttonSelection" onClick={() => setSlider(3)}>3</button>
+              <button className="buttonSelection" onClick={() => setSlider(4)}>4</button>
+              <button className="buttonSelection" onClick={() => setSlider(5)}>5</button>
+              <button className="buttonSelection" onClick={() => setSlider(6)}>6</button>
+            </div>
+        </div>
       </div>
     );
   }
