@@ -1,7 +1,10 @@
 import { useState } from "react";
+import Image from "next/image";
 import { pokemon,videogame,weather,movies,marvel,rickandmorty } from "./helper/Images";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
+
 const Projects = () => {
 
   const [slider, setSlider] = useState(1)
@@ -39,37 +42,37 @@ const Projects = () => {
               {slider === 1 ? pokemon.map((el,index) => {
                 return (
                   <div key={index} className="imageSlider">
-                    <img src={el.src} alt="prev"/>
+                    <Image src={el.src} alt="prev" width="350" height="100"/>
                   </div>
                 )
               }) : slider === 2 ? videogame.map((el,index) => {
                 return (
                   <div key={index} className="imageSlider">
-                    <img src={el.src} alt="prev"/>
+                    <Image src={el.src} alt="prev" width="350" height="100"/>
                   </div>
                 )
               }) : slider === 3 ? marvel.map((el,index) => {
                 return (
                   <div key={index} className="imageSlider">
-                    <img src={el.src} alt="prev"/>
+                    <Image src={el.src} alt="prev" width="350" height="100"/>
                   </div>
                 )
               }) : slider === 4 ? weather.map((el,index) => {
                 return (
                   <div key={index} className="imageSlider">
-                    <img src={el.src} alt="prev"/>
+                    <Image src={el.src} alt="prev" width="350" height="100"/>
                   </div>
                 )
               }) : slider === 5 ? movies.map((el,index) => {
                 return (
                   <div key={index} className="imageSlider">
-                    <img src={el.src} alt="prev"/>
+                    <Image src={el.src} alt="prev" width="350" height="100"/>
                   </div>
                 )
               }) : slider === 6 ? rickandmorty.map((el,index) => {
                 return (
                   <div key={index} className="imageSlider">
-                    <img src={el.src} alt="prev"/>
+                    <Image src={el.src} alt="prev" width="350" height="100"/>
                   </div>
                 )
               }) : ""}
