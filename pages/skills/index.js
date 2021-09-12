@@ -16,7 +16,7 @@ import interrogacion from '../../assets/images/interrogacion-img.png'
 import toBeContinue from '../../assets/images/continue.jpg'
 import power from '../../assets/images/PowerBI.jpg'
 
-import { handleChange } from './helper/switchSkills'
+import { handleChange } from '../../helper/switchSkills'
 import Swal from "sweetalert2"
 
 const Skills = () => {
