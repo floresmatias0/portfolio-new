@@ -34,7 +34,7 @@ const resources = {
       "option language": "How would you like to see the page?",
       "Saludo inicial": "Hi! my name is Matias Flores",
       "welcome": "Welcome to my portfolio",
-      "What your name?": "What your name?",
+      "What your name?": "What's your name?",
       "insert name": "Please insert name to continue",
       "name and spaces": "The name can only contain letters and spaces",
       "insert email": "Please insert email to continue",

@@ -77,61 +77,6 @@ const Navbar = ({t}) => {
     </Head>
 
     <nav className={logged ? "" : "ocult"}>
-      {/* <style jsx>
-        {`
-          nav{
-            width: 2em;
-            height: 100%;
-          }
-          .registered, .open{
-            height:100%;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            background-color: #001529;
-          }
-          .ocult{
-            display: none;
-          }
-          .open{
-            width: 2em;
-            margin: 0;
-            justify-content: center;
-            align-items: center;
-
-          }
-          .registered{
-            width:6em;
-            justify-content: space-between;
-            margin: 0;
-            padding-top: 2em;
-            padding-bottom: 2em;
-            transition: .4s;
-            z-index: 99;
-          }
-          li{
-            width:100%;
-            text-align:center;
-            color: gray;
-            font-family: GothamV2;
-            font-size: .7rem;
-          }
-          .active{
-            color: #FFFFFF;
-          }
-          li:hover{
-            color: #FFFFFF;
-          }
-          .open li, .registered li{
-            cursor: pointer;
-          }
-          .image{
-            padding: 0.5em;
-          }
-        `}
-      </style> */}
-
       <style jsx global>
           {`
             .test{
@@ -150,16 +95,15 @@ const Navbar = ({t}) => {
               {t('EXIT')}
             </li>
             <li>
-              {/* <h2>{t('option language')}</h2> */}
                 <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
-                  <div onClick={() => change('pr')}>
-                    <Image  src={portugal} width={32} height={32}/>
+                  <div onClick={() => change('en')}>
+                    <Image  src={inglaterra} width={32} height={32}/>
                   </div>
                   <div onClick={() => change('es')}>
                     <Image  src={españa} width={32} height={32}/>
                   </div>
-                  <div onClick={() => change('en')}>
-                    <Image  src={inglaterra} width={32} height={32}/>
+                  <div onClick={() => change('pr')}>
+                    <Image  src={portugal} width={32} height={32}/>
                   </div>
                 </Carousel>
             </li>

@@ -30,7 +30,7 @@
       text-align: center;
       font-family: Gotham;
       color: #FFFFFF;
-      background-color: #45c5e5b9;
+      background-color: #889eafa8;
       padding: 0 .8em;
       border-top-left-radius: 1em 100%;
       border-bottom-right-radius: 1em 100%;
@@ -55,7 +55,7 @@
     display: flex;
     justify-self: center;
     border-radius: 5em;
-    box-shadow: 2px 2px 2px #45c5e5b9;
+    box-shadow: 2px 2px 2px #889eafa8;
     padding: .5em;
     &:active{
       transform: scale(0.95);
@@ -103,7 +103,7 @@
   .titleInput{
     font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 1em;
+    margin-top: .5em;
     color: #FFFFFF;
     text-shadow: 2px 2px 2px #001529;
     margin-bottom: .5em;
@@ -194,14 +194,16 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    margin: .5em;
   }
   .contentAbout{
     width: 30em;
     text-align: justify;
 
     p{
-      background-color: #846f537e;
+      background-color: #d4b499a8;
       line-height: 1.5;
+      font-size: 1.1rem;
       font-style: italic;
       text-shadow: 2px 2px 2px #000000;
       color: #FFFFFF;
@@ -236,8 +238,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: #846f537e;
-    border-radius: 5px;
+    background-color: #d4b499a8;
+    border-top-left-radius: .5em 10%;
+    border-bottom-right-radius: .5em 10%;
   }
   .contentCards{
     width: 35em;
@@ -247,7 +250,7 @@
   //SLIDER
   .contentProject{
     width: 30em;
-    background-color: #846f537e;
+    background-color: #d4b499a8;
     border-top-left-radius: .5em 10%;
     border-bottom-right-radius: .5em 10%;
     padding: .5em 1em;
@@ -286,7 +289,7 @@
   .certificate{
     width: 200px;
     margin: 1em;
-    background-color: #846f537e;
+    background-color: #d4b499a8;
     border-top-left-radius: .5em 10%;
     border-bottom-right-radius: .5em 10%;
     padding: .5em 1em;
@@ -308,7 +311,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    background-color: #846f537e;
+    background-color: #d4b499a8;
     border-top-left-radius: .5em 10%;
     border-bottom-right-radius: .5em 10%;
     padding: .5em 1em;
@@ -357,7 +360,7 @@
   .contentForm{
     margin: .5em;
     padding: .8em;
-    background-color: #45c5e5b9;
+    background-color: #889eafa8;
     color: #FFFFFF;
     text-shadow: 2px 2px 2px #001529;
     font-style: italic;
@@ -378,7 +381,7 @@
     bottom: 0;
     display: flex;
     flex-direction: column;
-    background-color: #001529;
+    background-color: #506D84;
   }
   .ocult{
     display: none;
@@ -397,16 +400,18 @@
     padding-top: 2em;
     padding-bottom: 2em;
     transition: .4s;
-    z-index: 99;  
+    z-index: 2;
       li{
         width:100%;
         text-align:center;
-        color: gray;
+        color: #000000;
+        text-shadow: 0px 0px 5px #FFFFFF;
         font-family: GothamV2;
         font-size: .7rem;
       }
       li:hover{
         color: #FFFFFF;
+        text-shadow: 0px 0px 5px #000000;
       }
   }
   .active{
@@ -464,19 +469,28 @@
         min-height: 200px !important;
       }
     }
-    .form{
-      width: 15em;
-    }
+    
     .container {
       h1{
         margin: 1em;
+        padding: 0;
       }
     }
+    .contentAbout{
+      p{
+        line-height: 1;
+        text-shadow: 0px 0px 10px #000000;
+      }
+    }
+
   }
   @media screen and (max-width:350px) {
     .certificate{
       width: 150px;
       margin: 0;
+    }
+    .form{
+      width: 15em;
     }
     .contentAbout{
       p{
