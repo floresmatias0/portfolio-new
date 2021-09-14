@@ -11,7 +11,19 @@ const resources = {
       "Hi": "Hi",
       "Well Done!": "Well Done!",
       "About": "About me",
-      "Text about": "My name is Matias I am a FullStack developer graduated of Henry. learnt to much since start the carrer and this I was to to loved, the world of code is very long but I feel close to it in this moment. my confort place is the frontend but the relationship with the backend is really good also, I like working in teams when a proyect is more complete with data base,backend and frontend using an agile method like SCRUM if you need contactme or you need my help go to the contact tab i will be very happy to help you!",
+      "Text about": `My name is Matias I am a FullStack developer graduated from SoyHenry.
+      In the final projects I have made an individual one that consisted of using an API
+      to make requests for information about said api and make a single page application
+      with static and dynamic routes using NodeJS plus Express, Sequelize, PostgreSQL for the backend and
+      ReactJS in addition to React-Redux and CSS-module for the frontend.
+      Finally, a group project that consisted of creating an e-commerce using the SCRUM methodology.
+      for more details on these projects I will leave my cv below so you can download and view calmly.
+      I like to program, whenever I can implement a new library to fill myself with knowledge I always think
+      that for some project it will be useful to learn it and I investigate it until I know how to use it my place of comfort is the frontend
+      Although the backend is doing very well for me, I have even tried sockets, I like to work as a team I think this is
+      good to have different perspectives, if you need to contact me or need my help in the contact tab you can send me
+      an email from the form or I will also be leaving my social networks in which you can also talk to me,
+      I will be very happy to help you!`,
       "Learned skills": "Learned skills",
       "Certificates": "Certificates",
       "Contact me": "Contact me",
@@ -54,7 +66,7 @@ const resources = {
       You can also change the language by selecting one of the flags that
       They are in the same navigation bar, in case you regretted
       at the beginning and now you want to see it or read it in another language, it is not
-      there is a lot to read but it is a good practice haha, thanks for
+      there is a lot to read but it is a good practice, thanks for
       read this far I hope you like my portfolio, greetings!`,
       "Message send, thanks!": "Message send, thanks!"
     }
@@ -65,7 +77,19 @@ const resources = {
         "Hi": "Olá",
         "Well Done!": "Bem feito!",
         "About": "Sobre mim",
-        "Text about": "Meu nome é Matias, sou um desenvolvedor FullStack graduado pelo Henry. Aprendi muito desde que comecei a me formar e adorei isso, o mundo do código é muito longo, mas me sinto perto dele no momento. meu lugar de conforto é o frontend mas a relação com o backend também é muito boa, gosto de trabalhar em equipe quando um projeto está mais completo com banco de dados, backend e frontend usando um método ágil como SCRUM se precisar entrar em contato comigo ou preciso da minha ajuda vá para a aba de contato, ficarei muito feliz em ajudá-lo!",
+        "Text about": `Meu nome é Matias, sou um desenvolvedor FullStack graduado pela SoyHenry.
+        nos projetos finais fiz um individual que consistia no uso de uma API
+        para fazer solicitações de informações sobre a referida api e fazer um aplicativo de página única
+        com rotas estáticas e dinâmicas usando NodeJS plus Express, Sequelize, PostgreSQL para o backend e
+        ReactJS, além de React-Redux e módulo CSS para o frontend.
+        Por fim, um projeto de grupo que consistiu na criação de um e-commerce utilizando a metodologia SCRUM.
+        para mais detalhes sobre esses projetos deixarei meu cv abaixo para que você possa baixar e assistir com calma.
+        Gosto de programar, sempre que consigo implementar uma nova biblioteca para me encher de conhecimento sempre penso
+        que para algum projeto será útil aprendê-lo e eu investigo até saber como usá-lo meu lugar de conforto é o frontend
+        Embora o backend esteja indo muito bem para mim, eu até tentei soquetes, gosto de trabalhar em equipe, acho que isso é
+        bom ter perspectivas diferentes, se precisar entrar em contato comigo ou precisar da minha ajuda na aba de contato você pode me enviar
+        um email do formulário ou também estarei saindo das minhas redes sociais nas quais você também pode falar comigo,
+        Ficarei muito feliz em ajudá-lo!`,
         "Learned skills": "habilidades aprendidas",
         "Certificates": "Certificados",
         "Contact me": "Contate-me",
@@ -119,7 +143,19 @@ const resources = {
         "Hi": "Hola",
         "Well Done!": "Bien hecho!",
         "About": "Sobre mi",
-        "Text about": "Mi nombre es Matias soy un desarrollador FullStack graduado de Henry. Aprendí mucho desde que empecé la carrera y esto me encantó, el mundo del código es muy largo pero me siento cerca de él en este momento. mi lugar de confort es el frontend pero la relación con el backend también es muy buena, me gusta trabajar en equipo cuando un proyecto es más completo con base de datos, backend y frontend usando un método ágil como SCRUM si necesitas contactarme o necesitas mi ayuda ve a la pestaña de contacto ¡estaré muy feliz de poder ayudarte!",
+        "Text about": `Mi nombre es Matias soy desarrollador FullStack graduado en soyHenry. 
+        en los proyectos finales he realizado uno individual que consistia en utilizar una Api 
+        para realizar peticiones de informacion sobre dicha api y realizar una single page application
+        con rutas estaticas y dinamicas utilizando NodeJS ademas de Express,Sequelize,PostgreSQL para el backend y 
+        ReactJS ademas de React-Redux y CSS-module para el frontend.
+        Por ultimo un proyecto grupal que consistia en crear un e-commerce utilizando la metodologia SCRUM
+        para mas detalles sobre estos proyectos voy a dejar mi cv mas abajo para que puedas descargar y ver tranquilamente. 
+        Me gusta programar, siempre que puedo implemento alguna libreria nueva para llenarme de conocimiento siempre pienso
+        que para algun proyecto me va a servir aprenderlo y lo investigo hasta saber utilizarlo mi lugar de confort es el frontend 
+        aunque en el backend me va muy bien tambien hasta he probado sockets, me gusta trabajar en equipo pienso que esta
+        bueno tener distintas perspectivas, si necesitas contactarme o necesitas mi ayuda en la pestaña de contacto podras enviarme
+        un correo desde el formulario o tambien voy a estar dejando mis redes sociales en las cuales me puedes hablar tambien, 
+        ¡estaré muy feliz de poder ayudarte!`,
         "Learned skills": "Habilidades aprendidas",
         "Certificates": "Certificados",
         "Contact me": "Contactame",
@@ -162,7 +198,7 @@ const resources = {
         tambien puedes cambiar el idioma seleccionando una de las banderas que
         se encuentran en la misma barra de navegacion, por si te arrepentiste
         al principio y ahora quieres verla o leerla en otro idioma, tampoco es
-        que hay mucho que leer pero es una buena practica jaja, gracias por
+        que hay mucho que leer pero es una buena practica, gracias por
         leer hasta aca espero que te guste mi portafolio, saludos!!`,
         "Message send, thanks!": "Mensaje enviado, gracias!"
       }

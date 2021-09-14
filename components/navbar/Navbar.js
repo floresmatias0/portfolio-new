@@ -65,10 +65,8 @@ const Navbar = ({t}) => {
       })
     }
   }
-
   return (
     <div>
-
     <Head>
       <link
         rel="stylesheet"

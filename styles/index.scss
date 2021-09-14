@@ -197,7 +197,7 @@
     margin: .5em;
   }
   .contentAbout{
-    width: 30em;
+    width: 50em;
     text-align: justify;
 
     p{
@@ -424,7 +424,11 @@
   .image{
     padding: 0.5em;
   }
-
+  @media screen and (max-width:900px) {
+    .contentAbout{
+      width: 90%;
+    }
+  }
   @media screen and (max-width:800px) {
     .contentSlider{
       width: 30em;
@@ -432,6 +436,7 @@
     .imageSlider{
       min-height: 250px;
     }
+
   }
   @media screen and (max-width:600px) {
 
@@ -458,6 +463,16 @@
       width:14em;
       margin: .1em;
     }
+    .contentAbout{
+      p{
+        line-height: 1;
+        text-shadow: 0px 0px 10px #000000;
+      }
+    }
+    .certificate{
+      width: 60%;
+      margin: 1em auto;
+    }
   }
   @media screen and (max-width:450px) {
     .contentProject{
@@ -476,14 +491,8 @@
         padding: 0;
       }
     }
-    .contentAbout{
-      p{
-        line-height: 1;
-        text-shadow: 0px 0px 10px #000000;
-      }
-    }
-
   }
+
   @media screen and (max-width:350px) {
     .certificate{
       width: 150px;
@@ -492,9 +501,5 @@
     .form{
       width: 15em;
     }
-    .contentAbout{
-      p{
-        line-height: 1;
-      }
-    }
+
   }
