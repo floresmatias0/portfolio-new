@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -15,7 +15,6 @@ import inglaterra from '../assets/images/united_kingdom_flag.png'
 const Init = ({t}) => {
 
   const router = useRouter();
-  const [logged,setLogged] = useState(null)
 
   const change = (language) =>{
     i18n.changeLanguage(language)
@@ -23,16 +22,6 @@ const Init = ({t}) => {
       html: `<p>${t('Change language')}</p>`
     })
   }
-
-  useEffect(() => {
-    if (localStorage.getItem("name")) {
-      let visit = localStorage.getItem("name")
-      setLogged(visit)
-    }
-    
-    logged ? router.push("/home") : ""
-
-  },[logged])
 
   var aux = [];
   var codes = ["432765", "897654", "532176"];
