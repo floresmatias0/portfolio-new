@@ -93,9 +93,15 @@ const Init = ({t}) => {
         <h2>{t('welcome')}</h2>
         <h3>{t('option language')}</h3>
             <div className="flags">
-              <Image onClick={() => change('pr')} src={portugal} width={32} height={32}/>
-              <Image onClick={() => change('es')} src={españa} width={32} height={32}/>
-              <Image onClick={() => change('en')} src={inglaterra} width={32} height={32}/>  
+              <div className="contentFlag">
+                <Image onClick={() => change('pr')} src={portugal} width={36} height={36}/>
+              </div>
+              <div className="contentFlag">
+                <Image onClick={() => change('es')} src={españa} width={36} height={36}/>
+              </div>
+              <div className="contentFlag">
+                <Image onClick={() => change('en')} src={inglaterra} width={36} height={36}/>  
+              </div>
             </div>
         <div>
           <div>

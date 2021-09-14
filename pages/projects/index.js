@@ -22,12 +22,12 @@ const Projects = ({t}) => {
         <h1>{t('Own projects')}</h1>
           <div className="contentProject">
             { 
-              slider === 1 ? <h2>Pokemon</h2> :
-              slider === 2 ? <h2>Videogames</h2> :
-              slider === 3 ? <h2>Marvel</h2> :
-              slider === 4 ? <h2>Weather</h2> :
-              slider === 5 ? <h2>Movies</h2> :
-              slider === 6 ? <h2>Rick and Morty</h2> :
+              slider === 1 ? <h2 style={{background: "none",marginBottom: ".5em"}}>Pokemon</h2> :
+              slider === 2 ? <h2 style={{background: "none",marginBottom: ".5em"}}>Videogames</h2> :
+              slider === 3 ? <h2 style={{background: "none",marginBottom: ".5em"}}>Marvel</h2> :
+              slider === 4 ? <h2 style={{background: "none",marginBottom: ".5em"}}>Weather</h2> :
+              slider === 5 ? <h2 style={{background: "none",marginBottom: ".5em"}}>Movies</h2> :
+              slider === 6 ? <h2 style={{background: "none",marginBottom: ".5em"}}>Rick and Morty</h2> :
               ""
             }
             {

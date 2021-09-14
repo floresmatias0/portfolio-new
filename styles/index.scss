@@ -19,6 +19,7 @@
     text-align: center;
     height: 100vh;
     font-family: Avenir;
+    backdrop-filter: blur(1.5px);
     h2{
       margin: 0 3em;
     }
@@ -29,7 +30,7 @@
       text-align: center;
       font-family: Gotham;
       color: #FFFFFF;
-      background-color: #ff00006b;
+      background-color: #45c5e5b9;
       padding: 0 .8em;
       border-top-left-radius: 1em 100%;
       border-bottom-right-radius: 1em 100%;
@@ -48,13 +49,19 @@
     img{
       cursor: pointer;
       border-radius: .5em;
-      backdrop-filter: contrast(10%);
     }
-    img:hover{
-      transform: scale(1.05);
-    }
-    img:active{
+  }
+  .contentFlag{
+    display: flex;
+    justify-self: center;
+    border-radius: 5em;
+    box-shadow: 2px 2px 2px #45c5e5b9;
+    padding: .5em;
+    &:active{
       transform: scale(0.95);
+    }
+    &:hover{
+      background-color: #45c5e541;
     }
   }
   .hiddenCode {
@@ -98,9 +105,6 @@
     font-size: 1.2rem;
     margin-top: 1em;
     color: #FFFFFF;
-    background-color: #ff00006b;
-    border-top-left-radius: 1em 100%;
-    border-bottom-right-radius: 1em 100%;
     text-shadow: 2px 2px 2px #001529;
     margin-bottom: .5em;
   }
@@ -196,10 +200,10 @@
     text-align: justify;
 
     p{
-      background-color: #d1a000a9;
+      background-color: #846f537e;
       line-height: 1.5;
       font-style: italic;
-      text-shadow: 0px 0px 5px #000000;
+      text-shadow: 2px 2px 2px #000000;
       color: #FFFFFF;
       padding: 1.2em .7em;
       border-top-left-radius: .5em 10%;
@@ -232,17 +236,21 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: #eaedf2;
+    background: #846f537e;
     border-radius: 5px;
   }
   .contentCards{
-    width: 40em;
+    width: 35em;
     margin: 0 auto;
   }  
 
   //SLIDER
   .contentProject{
     width: 30em;
+    background-color: #846f537e;
+    border-top-left-radius: .5em 10%;
+    border-bottom-right-radius: .5em 10%;
+    padding: .5em 1em;
   }
   .imageSlider{
     width: 100%;
@@ -261,16 +269,16 @@
     padding: .5em;
     margin: .5em;
     color:#FFFFFF;
-    background-color: #001529;
-    border-radius: .5em;
+    background-color: #001529cb;
+    border-radius: .2em;
     border:none;
     outline: none;
     cursor: pointer;
+    &:hover{
+      background-color: #001529;
+    }
     &:active{
       transform: scale(0.95);
-    }
-    &:hover{
-      color: #808080;
     }
   }
 
@@ -278,6 +286,10 @@
   .certificate{
     width: 200px;
     margin: 1em;
+    background-color: #846f537e;
+    border-top-left-radius: .5em 10%;
+    border-bottom-right-radius: .5em 10%;
+    padding: .5em 1em;
   }
   .certificateImage{
     border-radius: .2em;
@@ -296,9 +308,14 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    background-color: #846f537e;
+    border-top-left-radius: .5em 10%;
+    border-bottom-right-radius: .5em 10%;
+    padding: .5em 1em;
     label{
       margin: .3em;
-      color: #001529;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 2px #000000;
     }
     textarea{
       height: 8em;
@@ -307,10 +324,10 @@
       padding: .7em .5em;
       outline: none;
       border: none;
-      border-radius: .3em;
+      border-radius: .2em;
       font-family: Avenir;
       &:focus{
-        border: 2px solid #001529;
+        border: .2em solid #001529;
         transition: border .1s;
       }
       &::placeholder{
@@ -319,19 +336,28 @@
     }
     p{
       color: #FF0000;
+      text-shadow: 1px 0px 0px #c40000;
       font-weight: 400;
-      margin: 0;
+      margin: .1em;
       text-align: center;
     }
   }
   .buttonMail{
     width: 5em;
     margin: 1em auto;
+    border-radius: .2em;
+    background-color: #001529cb;
+    &:hover{
+      background-color: #001529;
+    }
+    &:active{
+      transform: scale(0.95);
+    }
   }
   .contentForm{
     margin: .5em;
     padding: .8em;
-    background-color: #ff00006b;
+    background-color: #45c5e5b9;
     color: #FFFFFF;
     text-shadow: 2px 2px 2px #001529;
     font-style: italic;
