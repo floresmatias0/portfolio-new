@@ -29,6 +29,7 @@ const Navbar = ({t}) => {
   const change = (language) =>{
     i18n.changeLanguage(language)
     Swal.fire({
+      icon: 'success',
       html: `<p>${t('Change language')}</p>`
     })
   }
@@ -38,6 +39,32 @@ const Navbar = ({t}) => {
       setLogged(localStorage.getItem("name"))
     }
   },[logged])
+
+  const deleteName = () => {
+    let timerInterval
+
+    if(logged){
+      localStorage.clear()
+      
+      Swal.fire({
+        html: 'Seras redirigido en... <b></b> milliseconds.',
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then(() => {
+        return router.reload()
+      })
+    }
+  }
 
   return (
     <div>
@@ -50,7 +77,7 @@ const Navbar = ({t}) => {
     </Head>
 
     <nav className={logged ? "" : "ocult"}>
-      <style jsx>
+      {/* <style jsx>
         {`
           nav{
             width: 2em;
@@ -81,6 +108,7 @@ const Navbar = ({t}) => {
             padding-top: 2em;
             padding-bottom: 2em;
             transition: .4s;
+            z-index: 99;
           }
           li{
             width:100%;
@@ -102,7 +130,7 @@ const Navbar = ({t}) => {
             padding: 0.5em;
           }
         `}
-      </style>
+      </style> */}
 
       <style jsx global>
           {`
@@ -117,6 +145,9 @@ const Navbar = ({t}) => {
           <ul className='registered animate__animated animate__fadeInLeft'>
             <li className='image'>
               <Image className='test' src={Mati} alt="imgProfile" width={300} height={300} objectFit="cover" placeholder="blur"/>
+            </li>
+            <li onClick={deleteName}>
+              {t('EXIT')}
             </li>
             <li>
               {/* <h2>{t('option language')}</h2> */}
@@ -135,6 +166,9 @@ const Navbar = ({t}) => {
             
             <li onClick={() => setHidden(hidden ? false : true)}>
               <Image src={backArrow} alt='closeBar' width={20} height={20} />
+            </li>
+            <li className={router.pathname === "/home" ? "active" : ""}>
+                <Link href='/home'>{t('HOME')}</Link>
             </li>
             <li className={router.pathname === "/about" ? "active" : ""}>
                 <Link href='/about'>{t('ABOUT ME')}</Link>

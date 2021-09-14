@@ -21,7 +21,7 @@ const Certificates = ({t}) => {
                     />
                     <button 
                     className="buttonCertificate" 
-                    onClick={() => window.location.href=`${henryCertificate}`}>
+                    onClick={() => window.open(`${henryCertificate}`)}>
                     {t('view certificate')}
                     </button> 
                 </div>
@@ -35,7 +35,7 @@ const Certificates = ({t}) => {
                     />
                     <button
                     className="buttonCertificate" 
-                    onClick={() => window.location.href=`${utnCertificate}`}>
+                    onClick={() => window.open(`${utnCertificate}`)}>
                     {t('view certificate')}
                     </button > 
                 </div>
@@ -49,7 +49,7 @@ const Certificates = ({t}) => {
                     />
                     <button 
                     className="buttonCertificate" 
-                    onClick={() => window.location.href=`${efsetCertificate}`}>
+                    onClick={() => window.open(`${efsetCertificate}`)}>
                     {t('view certificate')}
                     </button> 
                 </div>

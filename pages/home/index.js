@@ -12,18 +12,28 @@ const Home = ({t}) => {
     },[logged])
 
     return (
-        <div className="container">
-            <style jsx>
-                {`
-                    h1{
-                      margin: 0;  
-                    } 
-                `}
-            </style>
-            {logged ? <h1>{t('Hi')} {logged}!!</h1> : ""}
-
-        </div>
-    )
+      <div className="container">
+        <style jsx>
+          {`
+            h1 {
+              margin: 0;
+            }
+          `}
+        </style>
+        {logged ? (
+          <h1>
+            {t("Hi")} {logged}!!
+          </h1>
+        ) : (
+          ""
+        )}
+        <div className='contentAbout'>
+          <p>
+            {t('text principal')}
+          </p>
+        </div> 
+      </div>
+    );
 }
 
 export default withTranslation()(Home);

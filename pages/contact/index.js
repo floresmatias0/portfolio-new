@@ -37,25 +37,25 @@ const Contact = ({t}) => {
                         let errors = {}
                         //Validate nick
                         if(!fields.nick){
-                            errors.nick = "Please insert name to continue"
+                            errors.nick = `${t('insert name')}`
                         }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.nick)){
-                            errors.nick = "The name can only contain letters and spaces"
+                            errors.nick = `${t('name and spaces')}`
                         }
                         //Validate email
                         if(!fields.email){
-                            errors.email = 'Please insert email to continue'
+                            errors.email = `${t('insert email')}`
                         }else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(fields.email)){
-                            errors.email = 'The email can only contain letters, numbers, periods, scripts and underscore'
+                            errors.email = `${t('email and spaces')}`
                         }
                         //Validate subject
                         if(!fields.subject){
-                            errors.subject = "Please insert subject of the topic"
+                            errors.subject = `${t('insert subject')}`
                         }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.subject)){
-                            errors.subject = "The subject can only contain letters and spaces"
+                            errors.subject = `${t('subject and spaces')}`
                         }
                         //Validate message
                         if(!fields.message){
-                            errors.message = "Please insert message to send"
+                            errors.message = `${t('insert message')}`
                         }
                         
                         return errors
@@ -82,7 +82,7 @@ const Contact = ({t}) => {
                             if(response.statusText === 'Accepted') {
                                 Toast.fire({
                                 icon: 'success',
-                                title: 'Message send, thanks!'
+                                title: `${t('Message send, thanks!')}`
                             })
                             }else{
                                 Toast.fire({

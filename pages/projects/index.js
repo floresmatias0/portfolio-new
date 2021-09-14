@@ -1,9 +1,7 @@
 import { useState } from "react";
-import Image from "next/image";
 import { pokemon,videogame,weather,movies,marvel,rickandmorty } from "../../helper/Images";
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { withTranslation } from "react-i18next";
+import Slider from '../../components/slider/Slider'
 
 
 const Projects = ({t}) => {
@@ -32,54 +30,24 @@ const Projects = ({t}) => {
               slider === 6 ? <h2>Rick and Morty</h2> :
               ""
             }
-            <Carousel showThumbs={false}>
-              {slider === 1 ? pokemon.map((el,index) => {
-                return (
-                  <div key={index} className="imageSlider">
-                    <Image src={el.src} alt="prev" width="350" height="100"/>
-                  </div>
-                )
-              }) : slider === 2 ? videogame.map((el,index) => {
-                return (
-                  <div key={index} className="imageSlider">
-                    <Image src={el.src} alt="prev" width="350" height="100"/>
-                  </div>
-                )
-              }) : slider === 3 ? marvel.map((el,index) => {
-                return (
-                  <div key={index} className="imageSlider">
-                    <Image src={el.src} alt="prev" width="350" height="100"/>
-                  </div>
-                )
-              }) : slider === 4 ? weather.map((el,index) => {
-                return (
-                  <div key={index} className="imageSlider">
-                    <Image src={el.src} alt="prev" width="350" height="100"/>
-                  </div>
-                )
-              }) : slider === 5 ? movies.map((el,index) => {
-                return (
-                  <div key={index} className="imageSlider">
-                    <Image src={el.src} alt="prev" width="350" height="100"/>
-                  </div>
-                )
-              }) : slider === 6 ? rickandmorty.map((el,index) => {
-                return (
-                  <div key={index} className="imageSlider">
-                    <Image src={el.src} alt="prev" width="350" height="100"/>
-                  </div>
-                )
-              }) : ""}
-            </Carousel>
+            {
+              slider === 1 ? <Slider props={pokemon}/> :
+              slider === 2 ? <Slider props={videogame}/> : 
+              slider === 3 ? <Slider props={marvel}/> : 
+              slider === 4 ? <Slider props={weather}/> : 
+              slider === 5 ? <Slider props={movies}/> : 
+              slider === 6 ? <Slider props={rickandmorty}/> : 
+              ""
+            }
             <button 
               className="buttonPage" 
               onClick={ 
-                slider === 1 ? () => window.location.href=`${pages.pokemon}` :
-                slider === 2 ? () => window.location.href=`${pages.videogames}` :
-                slider === 3 ? () => window.location.href=`${pages.marvel}` :
-                slider === 4 ? () => window.location.href=`${pages.clima}` :
-                slider === 5 ? () => window.location.href=`${pages.movies}` :
-                slider === 6 ? () => window.location.href=`${pages.rickandmorty}` : ""}>
+                slider === 1 ? () => window.open(`${pages.pokemon}`) :
+                slider === 2 ? () => window.open(`${pages.videogames}`) :
+                slider === 3 ? () => window.open(`${pages.marvel}`) :
+                slider === 4 ? () => window.open(`${pages.clima}`) :
+                slider === 5 ? () => window.open(`${pages.movies}`) :
+                slider === 6 ? () => window.open(`${pages.rickandmorty}`) : ""}>
                   {t('Go page')}
             </button>
             <div>
