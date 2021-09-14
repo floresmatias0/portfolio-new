@@ -68,7 +68,8 @@ const resources = {
       at the beginning and now you want to see it or read it in another language, it is not
       there is a lot to read but it is a good practice, thanks for
       read this far I hope you like my portfolio, greetings!`,
-      "Message send, thanks!": "Message send, thanks!"
+      "Message send, thanks!": "Message send, thanks!",
+      "Redes Sociales": "Social Networks"
     }
   },
   pr: {
@@ -134,7 +135,8 @@ const resources = {
         no começo e agora você quer ver ou ler em outro idioma, não é
         há muito para ler, mas é uma boa prática haha, obrigado por
         leia até aqui espero que gostem do meu portfólio, saudações!`,
-        "Message send, thanks!": "Mensagem enviada, obrigado!"
+        "Message send, thanks!": "Mensagem enviada, obrigado!",
+        "Redes Sociales": "Redes Sociais"
     }
   },
   es: {
@@ -200,7 +202,8 @@ const resources = {
         al principio y ahora quieres verla o leerla en otro idioma, tampoco es
         que hay mucho que leer pero es una buena practica, gracias por
         leer hasta aca espero que te guste mi portafolio, saludos!!`,
-        "Message send, thanks!": "Mensaje enviado, gracias!"
+        "Message send, thanks!": "Mensaje enviado, gracias!",
+        "Redes Sociales": "Redes Sociales"
       }
   }
 };

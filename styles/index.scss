@@ -147,7 +147,7 @@
     margin: 0;
   }
   .slideRight li {
-    padding: 1em;
+    padding: .9em;
     font-weight: bold;
     box-shadow: 0px 0px 5px #FFFFFF inset;
     border-radius: .5em;
@@ -212,7 +212,18 @@
       border-bottom-right-radius: .5em 10%;
     }
   }
-
+.contentRedes{
+  img{
+    padding: .5em !important;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.05);
+    }
+    &:active{
+      transform: scale(0.95);
+    }
+  }
+}
   //SKILLS CARDS
   .image{
     width:100%;

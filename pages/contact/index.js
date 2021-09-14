@@ -8,6 +8,11 @@ import { withTranslation } from "react-i18next";
 
 const Contact = ({t}) => {
 
+    let linkedin = 'https://res.cloudinary.com/djnhaprmj/image/upload/v1631657531/linkedin_nj0q7q.png'
+    let instagram = 'https://res.cloudinary.com/djnhaprmj/image/upload/v1631658056/instagram_k33rwq.png'
+    let facebook = 'https://res.cloudinary.com/djnhaprmj/image/upload/v1631659057/facebook_wpoox9.png'
+    let cv = 'https://res.cloudinary.com/djnhaprmj/image/upload/v1631661310/curriculum_wgpy4g.png'
+
     const [loading, setLoading] = useState(false)
 
     const Toast = Swal.mixin({
@@ -117,6 +122,15 @@ const Contact = ({t}) => {
                     )}
                 </Formik>
                 {loading ? <Image src={pacman} alt="loading..." width={100} height={100}/> : ""}
+            </div>
+            <div>
+                <h2 style={{marginTop: "1em"}}>{t('Redes Sociales')}</h2>
+                <div className="contentRedes">
+                    <Image onClick={() => {window.open('https://www.linkedin.com/in/matias-leandro-flores/')}} src={linkedin} alt='linkedin' width={64} height={64}/>
+                    <Image onClick={() => {window.open('https://www.instagram.com/matiasleandro._/?hl=es')}} src={instagram} alt='instagram' width={64} height={64}/>
+                    <Image onClick={() => {window.open('https://www.facebook.com/MatiasLeandroFlores/')}} src={facebook} alt='facebook' width={64} height={64}/>
+                    <Image onClick={() => {window.open('https://drive.google.com/file/d/1OLPW-9ng1Do1PmZKkOzLvBXi1ZD_XnjQ/view?usp=sharing')}} src={cv} alt='cv' width={64} height={64}/>
+                </div>
             </div>
         </div>
     )
