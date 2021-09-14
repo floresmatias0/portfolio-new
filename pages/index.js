@@ -4,13 +4,26 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Head from "next/head";
 import { Formik, Form, Field } from 'formik';
+import { withTranslation } from "react-i18next";
+import i18n from '../components/i18n/i18n'
 import Swal from 'sweetalert2';
 
-const Init = () => {
+import portugal from '../assets/images/portugal_flags.png'
+import españa from '../assets/images/spain_flag.png'
+import inglaterra from '../assets/images/united_kingdom_flag.png'
+
+const Init = ({t}) => {
 
   const router = useRouter();
   const [logged,setLogged] = useState(null)
-  
+
+  const change = (language) =>{
+    i18n.changeLanguage(language)
+    Swal.fire({
+      html: `<p>${t('Change language')}</p>`
+    })
+  }
+
   useEffect(() => {
     if (localStorage.getItem("name")) {
       let visit = localStorage.getItem("name")
@@ -66,6 +79,7 @@ const Init = () => {
       })
       .then(() => {
           router.push({pathname:"/home"});
+          router.reload(window.location.pathname)
       })
 
     } else {
@@ -92,8 +106,14 @@ const Init = () => {
       </Head>
 
       <main>
-        <h1>Hi! my name is Matias Flores</h1>
-        <h2>Welcome to my portfolio</h2>
+        <h1>{t('Saludo inicial')}</h1>
+        <h2>{t('welcome')}</h2>
+        <h2>{t('option language')}</h2>
+            <div className="flags">
+              <Image onClick={() => change('pr')} src={portugal} width={32} height={32}/>
+              <Image onClick={() => change('es')} src={españa} width={32} height={32}/>
+              <Image onClick={() => change('en')} src={inglaterra} width={32} height={32}/>  
+            </div>
         <div>
           <div>
             <div className={hidden ? "hiddenCode" : "displayName"}>
@@ -105,9 +125,9 @@ const Init = () => {
                   let errors = {}
 
                   if(!fields.name){
-                    errors.name = 'Please insert name to continue'
+                    errors.name = `${t('insert name')}`
                   }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(fields.name)){
-                    errors.name = 'The name can only contain letters and spaces'
+                    errors.name = `${t('name and spaces')}`
                   }
 
                   return errors
@@ -121,7 +141,7 @@ const Init = () => {
               >
                 {({ touched,errors }) => (
                   <Form>
-                      <label className="titleInput">What your name?</label>
+                      <label className="titleInput">{t('What your name?')}</label>
                       <Field
                         className="inputName"
                         name="name"
@@ -131,14 +151,14 @@ const Init = () => {
                       {touched.name && errors.name ? <p className="errors">{errors.name}</p> : ""}
 
                       <button className="send" type="submit" onClick={code}>
-                        Send
+                        {t('Send')}
                       </button>
                   </Form>
                 )}
               </Formik>
             </div>
             <div className={hidden ? "displayCode" : "hiddenCode"}>
-              <label className="titleInput">your code is {codeRandom}</label>
+              <label className="titleInput">{t('code')} {codeRandom}</label>
               <input disabled value={numberCode} className="inputCode" />
             </div>
             <div className={hidden ? "buttons" : "hiddenCode"}>
@@ -183,4 +203,4 @@ const Init = () => {
   );
 }
 
-export default Init;
+export default withTranslation()(Init);

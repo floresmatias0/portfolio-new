@@ -22,10 +22,28 @@
     h1{
       text-align: center;
       font-family: Gotham;
-      margin: 0;
     }
     h3{
       margin: 0;
+    }
+  }
+  .flags{
+    width: 20em;
+  }
+  .flags, .flags-nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    img{
+      cursor: pointer;
+    }
+    img:hover{
+      transform: scale(1.05);
+    }
+    img:active{
+      transform: scale(0.95);
     }
   }
   .hiddenCode {
@@ -53,8 +71,10 @@
     margin-top: .5em;
     padding: .3em !important;
     text-align: center;
+    font-family: Avenir;
     &::placeholder{
       text-align: center;
+      font-family: Avenir !important;
     }
   }
   .titleInput{
@@ -88,6 +108,8 @@
     width: 20em;
     margin-left: auto;
     margin-right: auto;
+    
+
   }
   .slideRight {
     display: flex;

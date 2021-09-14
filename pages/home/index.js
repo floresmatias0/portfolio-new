@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
+import { withTranslation } from 'react-i18next'
 
-const Home = () => {
+const Home = ({t}) => {
     
     const [logged,setLogged] = useState("")
 
@@ -8,7 +9,7 @@ const Home = () => {
       if (localStorage.getItem("name")) {
         setLogged(localStorage.getItem("name"))
       }
-    },[])
+    },[logged])
 
     return (
         <div className="container">
@@ -19,10 +20,10 @@ const Home = () => {
                     } 
                 `}
             </style>
-            {logged ? <h1>Hi {logged}!!</h1> : ""}
+            {logged ? <h1>{t('Hi')} {logged}!!</h1> : ""}
+
         </div>
-        
     )
 }
 
-export default Home;
+export default withTranslation()(Home);

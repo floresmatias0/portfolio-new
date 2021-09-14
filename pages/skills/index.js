@@ -16,10 +16,12 @@ import interrogacion from '../../assets/images/interrogacion-img.png'
 import toBeContinue from '../../assets/images/continue.jpg'
 import power from '../../assets/images/PowerBI.jpg'
 
+
 import { handleChange } from '../../helper/switchSkills'
+import { withTranslation } from 'react-i18next'
 import Swal from "sweetalert2"
 
-const Skills = () => {
+const Skills = ({t}) => {
 
   const [allCards, setAllCards] = useState(false)
   const [cards, setCards] = useState({
@@ -62,7 +64,7 @@ const Skills = () => {
 
   return (
     <div className='container'>
-      <h1>Learned skills</h1>
+      <h1>{t('Learned skills')}</h1>
       <div className='contentCards'>
         <ul className="cardsUp">
           <li onClick={() => handleChange('react', cards, setCards)} className={cards.react ? `animate__animated animate__flipInY animate__slow	2s` : ''}>
@@ -113,4 +115,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default withTranslation()(Skills);

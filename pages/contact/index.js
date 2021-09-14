@@ -4,8 +4,9 @@ import axios from 'axios';
 import { useState } from "react";
 import Image from "next/image"
 import pacman from "../../assets/images/pacman.gif"
+import { withTranslation } from "react-i18next";
 
-const Contact = () => {
+const Contact = ({t}) => {
 
     const [loading, setLoading] = useState(false)
 
@@ -23,7 +24,7 @@ const Contact = () => {
     
     return (
         <div className='container'>
-            <h1>Contact me</h1>
+            <h1>{t('Contact me')}</h1>
             <div>
                 <Formik
                     initialValues={{
@@ -95,23 +96,23 @@ const Contact = () => {
                 >
                     {({errors,touched}) => (
                     <Form className="form">
-                        <label>Name</label>
+                        <label>{t('Name')}</label>
                         <Field type="text" placeholder="John Doe" name="nick"/>
                         {touched.nick && errors.nick ? <p>{errors.nick}</p> : ""}
 
-                        <label>Email</label>
+                        <label>{t('Email')}</label>
                         <Field type="email" placeholder="correo@correo.com" name="email"/>
                         {touched.email && errors.email ? <p>{errors.email}</p> : ""}
 
-                        <label>Subject</label>
-                        <Field type="text" placeholder="Job offer" name="subject"/>
+                        <label>{t('Subject')}</label>
+                        <Field type="text" placeholder={t('Job offer')} name="subject"/>
                         {touched.subject && errors.subject ? <p>{errors.subject}</p> : ""}
 
-                        <label>Message</label>
+                        <label>{t('Message')}</label>
                         <Field as="textarea" placeholder="Lorem ipsum..." name="message"/>
                         {touched.message && errors.message ? <p>{errors.message}</p> : ""}
 
-                      <button className="buttonMail" type="submit">Send</button>
+                      <button className="buttonMail" type="submit">{t('Send')}</button>
                     </Form>   
                     )}
                 </Formik>
@@ -121,4 +122,4 @@ const Contact = () => {
     )
 }
 
-export default Contact;
+export default withTranslation()(Contact);

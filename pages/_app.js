@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Navbar from '../components/navbar/Navbar'
 import '../styles/index.scss';
+import '../components/i18n/i18n';
 
 function MyApp({ Component, pageProps }) {
 

@@ -3,9 +3,10 @@ import Image from "next/image";
 import { pokemon,videogame,weather,movies,marvel,rickandmorty } from "../../helper/Images";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { withTranslation } from "react-i18next";
 
 
-const Projects = () => {
+const Projects = ({t}) => {
 
   const [slider, setSlider] = useState(1)
 
@@ -20,14 +21,7 @@ const Projects = () => {
 
     return (
       <div className='container'>
-      <style jsx global>
-        {`
-        container{
-          z-index: 1;
-        }
-        `}
-      </style>
-        <h1>Own projects</h1>
+        <h1>{t('Own projects')}</h1>
           <div className="contentProject">
             { 
               slider === 1 ? <h2>Pokemon</h2> :
@@ -86,7 +80,7 @@ const Projects = () => {
                 slider === 4 ? () => window.location.href=`${pages.clima}` :
                 slider === 5 ? () => window.location.href=`${pages.movies}` :
                 slider === 6 ? () => window.location.href=`${pages.rickandmorty}` : ""}>
-                  Go page
+                  {t('Go page')}
             </button>
             <div>
               <button className="buttonSelection" onClick={() => setSlider(1)}>1</button>
@@ -101,4 +95,4 @@ const Projects = () => {
     );
   }
   
-export default Projects;
+export default withTranslation()(Projects);

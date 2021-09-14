@@ -1,15 +1,16 @@
 import Image from 'next/image'
 import henry from '../../assets/images/certificateHenry.png'
 import efset from '../../assets/images/efset.png'
+import { withTranslation } from 'react-i18next'
 
-const Certificates = () => {
+const Certificates = ({t}) => {
     let henryCertificate = "https://certificates.soyhenry.com/cert?id=797fa144-b34c-4383-b58c-05b1a4db28ea"
     let utnCertificate = "https://res.cloudinary.com/djnhaprmj/image/upload/v1619947730/utn-certicate_hdzya1.png"
     let efsetCertificate = "https://www.efset.org/cert/vCMdaz"
 
     return (
         <div className='container'>
-            <h1>Certificates</h1>
+            <h1>{t('Certificates')}</h1>
             <div className="contentCertificates">
                 <div className="certificate">
                    <Image
@@ -21,7 +22,7 @@ const Certificates = () => {
                     <button 
                     className="buttonCertificate" 
                     onClick={() => window.location.href=`${henryCertificate}`}>
-                    view certicate
+                    {t('view certificate')}
                     </button> 
                 </div>
                 <div className="certificate">
@@ -35,7 +36,7 @@ const Certificates = () => {
                     <button
                     className="buttonCertificate" 
                     onClick={() => window.location.href=`${utnCertificate}`}>
-                    view certicate
+                    {t('view certificate')}
                     </button > 
                 </div>
                 <div className="certificate">
@@ -49,7 +50,7 @@ const Certificates = () => {
                     <button 
                     className="buttonCertificate" 
                     onClick={() => window.location.href=`${efsetCertificate}`}>
-                    view certicate
+                    {t('view certificate')}
                     </button> 
                 </div>
             </div>
@@ -58,4 +59,4 @@ const Certificates = () => {
     )
 }
 
-export default Certificates;
+export default withTranslation()(Certificates);
