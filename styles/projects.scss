@@ -1,0 +1,61 @@
+//SLIDER
+.contentProject {
+  width: 30em;
+  background-color: #d4b499a8;
+  border-top-left-radius: 0.5em 10%;
+  border-bottom-right-radius: 0.5em 10%;
+  padding: 0.5em 1em;
+}
+.imageSlider {
+  width: 100%;
+  img {
+    min-height: 250px;
+  }
+}
+//PROJECTS
+.buttonSelection {
+  width: 2em;
+}
+.buttonPage {
+  font-size: 1.1rem;
+}
+.buttonSelection,
+.buttonPage,
+.buttonCertificate,
+.buttonMail {
+  padding: 0.5em;
+  margin: 0.5em;
+  color: #ffffff;
+  background-color: #001529cb;
+  border-radius: 0.2em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #001529;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+.skills {
+  padding-top: 1em;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    li {
+      margin: 0.5em;
+      border: 1.5px solid #001529;
+      background-color: #00152960;
+      border-radius: 0.5em;
+      padding: 0.5em;
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  }
+}

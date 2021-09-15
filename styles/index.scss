@@ -1,516 +1,283 @@
 @font-face {
   font-family: Avenir;
-  src: url('../assets/fonts/Avenir\ Roman.otf');
+  src: url("../assets/fonts/Avenir\ Roman.otf");
 }
 @font-face {
   font-family: Gotham;
-  src: url('../assets/fonts/Gotham-MediumItalic.otf');
+  src: url("../assets/fonts/Gotham-MediumItalic.otf");
 }
 @font-face {
   font-family: GothamV2;
-  src: url('../assets/fonts/Gotham-Medium.otf');
+  src: url("../assets/fonts/Gotham-Medium.otf");
 }
+//ALL CONTAINERS
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  font-family: Avenir;
+  backdrop-filter: blur(1.5px);
+  h2 {
+    margin: 0 3em;
+  }
+  h3 {
+    margin: 1em 2.5em;
+  }
+  h1,
+  h2,
+  h3 {
     text-align: center;
-    height: 100vh;
-    font-family: Avenir;
-    backdrop-filter: blur(1.5px);
-    h2{
-      margin: 0 3em;
-    }
-    h3{
-      margin: 1em 2.5em;
-    }
-    h1,h2,h3{
-      text-align: center;
-      font-family: Gotham;
-      color: #FFFFFF;
-      background-color: #889eafa8;
-      padding: 0 .8em;
-      border-top-left-radius: 1em 100%;
-      border-bottom-right-radius: 1em 100%;
-      text-shadow: 2px 2px 2px #001529;
-    }
+    font-family: Gotham;
+    color: #ffffff;
+    background-color: #889eafa8;
+    padding: 0 0.8em;
+    border-top-left-radius: 1em 100%;
+    border-bottom-right-radius: 1em 100%;
+    text-shadow: 2px 2px 2px #001529;
   }
-  .flags{
-    width: 20em;
+}
+
+//INICIO
+.flags {
+  width: 20em;
+}
+.flags,
+.flags-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  img {
+    cursor: pointer;
+    border-radius: 0.5em;
   }
-  .flags, .flags-nav{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0 auto;
-    img{
-      cursor: pointer;
-      border-radius: .5em;
-    }
+}
+.contentFlag {
+  display: flex;
+  justify-self: center;
+  border-radius: 5em;
+  box-shadow: 2px 2px 2px #889eafa8;
+  padding: 0.5em;
+  &:active {
+    transform: scale(0.95);
   }
-  .contentFlag{
-    display: flex;
-    justify-self: center;
-    border-radius: 5em;
-    box-shadow: 2px 2px 2px #889eafa8;
-    padding: .5em;
-    &:active{
-      transform: scale(0.95);
-    }
-    &:hover{
-      background-color: #45c5e541;
-    }
+  &:hover {
+    background-color: #45c5e541;
   }
-  .hiddenCode {
-    display: none;
+}
+.hiddenCode {
+  display: none;
+}
+.displayName,
+.displayCode {
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.inputCode {
+  margin: 0 auto;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #001529;
+}
+.inputName,
+.inputCode {
+  width: 80%;
+  border: none;
+  border-radius: 0.2em;
+  box-shadow: 0px 0px 7px black;
+  outline: none;
+  font-family: Avenir;
+  font-size: 1.1rem;
+  margin-top: 0.5em;
+  padding: 0.3em !important;
+  text-align: center;
+  font-family: Avenir;
+  &::placeholder {
+    text-align: center;
+    font-family: Avenir !important;
   }
+}
+.titleInput {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 0.5em;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #001529;
+  margin-bottom: 0.5em;
+}
+.send {
+  font-family: Avenir;
+  border: none;
+  width: 100px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0.6em;
+  padding: 0.3em;
+  border-radius: 0.2em;
+  background-color: #001529cb;
+  &:hover {
+    background-color: #001529;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+.errors {
+  margin: 0;
+  margin: 0.2rem 0 0 0;
+  padding: 0;
+  color: #ff0000;
+  font-weight: bold;
+}
+.buttons {
+  width: 20em;
+  margin: 1em auto;
+}
+.slideRight {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+.slideRight li {
+  padding: 0.9em;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px #ffffff inset;
+  border-radius: 0.5em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  color: #ffffff;
+  background-color: #0015297c;
+  cursor: pointer;
+}
+.slideRight li:active {
+  transform: scale(0.9);
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0.5em;
+}
+
+//HOME
+.contentAbout {
+  width: 50em;
+  text-align: justify;
+
+  p {
+    background-color: #d4b499a8;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-style: italic;
+    text-shadow: 2px 2px 2px #000000;
+    color: #ffffff;
+    padding: 1.2em 0.7em;
+    border-top-left-radius: 0.5em 10%;
+    border-bottom-right-radius: 0.5em 10%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contentAbout {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .contentSlider {
+    width: 30em;
+  }
+  .imageSlider {
+    min-height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .displayName,
   .displayCode {
-    width: 20em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    width: 100%;
   }
-  .inputCode{
-    margin: 0 auto;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 2px #001529;
-  }
-  .inputName, .inputCode {
-    width: 80%;
-    border: none;
-    border-radius: .2em;
-    box-shadow: 0px 0px 7px black;
-    outline: none;
-    font-family: Avenir;
-    font-size: 1.1rem;
-    margin-top: .5em;
-    padding: .3em !important;
-    text-align: center;
-    font-family: Avenir;
-    &::placeholder{
-      text-align: center;
-      font-family: Avenir !important;
-    }
-  }
-  .titleInput{
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: .5em;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 2px #001529;
-    margin-bottom: .5em;
-  }
-  .send {
-    font-family: Avenir;
-    border: none;
-    width: 100px;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: .6em;
-    padding: .3em;
-    border-radius: .2em;
-    background-color: #001529cb;
-    &:hover{
-      background-color: #001529;
-    }
-    &:active{
-      transform: scale(0.95);
-    }
-  }
-  .errors{
+  .displayCode {
     margin: 0;
-    margin: .2rem 0 0 0;
-    padding: 0;
-    color: #FF0000;
-    font-weight: bold;
   }
-  .buttons{
-    width: 20em;
+  .inputName,
+  .inputCode {
+    width: 90%;
+  }
+  .inputCode {
+    margin: 0.5em auto;
+  }
+  .contentAbout {
+    width: 90%;
+  }
+  .contentCards {
+    width: 80%;
+  }
+  .cardsUp li,
+  .cardsDown li {
+    width: 14em;
+    margin: 0.1em;
+  }
+  .contentAbout {
+    p {
+      line-height: 1;
+      text-shadow: 0px 0px 10px #000000;
+    }
+  }
+  .certificate {
+    width: 60%;
     margin: 1em auto;
   }
-  .slideRight {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-  }
-  .slideRight li {
-    padding: .9em;
-    font-weight: bold;
-    box-shadow: 0px 0px 5px #FFFFFF inset;
-    border-radius: .5em;
-    margin-top: .4em;
-    margin-bottom: .4em;
-    color: #FFFFFF;
-    background-color: #0015297c;
-    cursor: pointer;
-  }
-  .slideRight li:active {
-    transform: scale(0.9);
-  }
-  .footer {
-    width: 100%;
-    height: 100px;
-    border-top: 1px solid #eaeaea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .skills{
-    padding-top: 1em;
-    ul{
-      list-style: none;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0;
-      li{
-        margin: .5em;
-        border: 1.5px solid #001529;
-        background-color: #00152960;
-        border-radius: .5em;
-        padding: .5em;
-        font-size: .7rem;
-        font-weight: bold;
-        color: #FFFFFF;
-      }
-    }
-  }
-  .footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    margin: .5em;
-  }
-  .contentAbout{
-    width: 50em;
-    text-align: justify;
+}
 
-    p{
-      background-color: #d4b499a8;
-      line-height: 1.5;
-      font-size: 1.1rem;
-      font-style: italic;
-      text-shadow: 2px 2px 2px #000000;
-      color: #FFFFFF;
-      padding: 1.2em .7em;
-      border-top-left-radius: .5em 10%;
-      border-bottom-right-radius: .5em 10%;
+@media screen and (max-width: 450px) {
+  .contentProject {
+    width: 90%;
+  }
+  .imageSlider {
+    min-height: 200px !important;
+    img {
+      min-height: 200px !important;
     }
   }
-.contentRedes{
-  img{
-    padding: .5em !important;
-    cursor: pointer;
-    &:hover{
-      transform: scale(1.05);
-    }
-    &:active{
-      transform: scale(0.95);
+
+  .container {
+    h1 {
+      margin: 1em;
+      padding: 0;
     }
   }
 }
-  //SKILLS CARDS
-  .image{
-    width:100%;
-    border-radius: 5px;
-  }
-  .cardsUp, .cardsDown {
-    display: flex;
-    width:100%;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0;
+
+@media screen and (max-width: 350px) {
+  .certificate {
+    width: 150px;
     margin: 0;
-    list-style: none;
   }
-  .cardsUp li, .cardsDown li{
-    width: 5em !important;
-    min-width: 5em !important;
-    padding: .5em;
-    margin: .5em;
-    min-height:5em;
-    max-height: 5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: #d4b499a8;
-    border-top-left-radius: .5em 10%;
-    border-bottom-right-radius: .5em 10%;
+  .form {
+    width: 15em;
   }
-  .contentCards{
-    width: 35em;
-    margin: 0 auto;
-  }  
-
-  //SLIDER
-  .contentProject{
-    width: 30em;
-    background-color: #d4b499a8;
-    border-top-left-radius: .5em 10%;
-    border-bottom-right-radius: .5em 10%;
-    padding: .5em 1em;
-  }
-  .imageSlider{
-    width: 100%;
-    img{
-      min-height: 250px;
-    }
-  }
-  //PROJECTS
-  .buttonSelection{
-    width: 2em;
-  }
-  .buttonPage{
-    font-size: 1.1rem;
-  }
-  .buttonSelection, .buttonPage, .buttonCertificate, .buttonMail{
-    padding: .5em;
-    margin: .5em;
-    color:#FFFFFF;
-    background-color: #001529cb;
-    border-radius: .2em;
-    border:none;
-    outline: none;
-    cursor: pointer;
-    &:hover{
-      background-color: #001529;
-    }
-    &:active{
-      transform: scale(0.95);
-    }
-  }
-
-  //CERTIFICATE
-  .certificate{
-    width: 200px;
-    margin: 1em;
-    background-color: #d4b499a8;
-    border-top-left-radius: .5em 10%;
-    border-bottom-right-radius: .5em 10%;
-    padding: .5em 1em;
-  }
-  .certificateImage{
-    border-radius: .2em;
-  }
-  .contentCertificates{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  //CONTACT ME
-  .form{
-    width: 20em;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    background-color: #d4b499a8;
-    border-top-left-radius: .5em 10%;
-    border-bottom-right-radius: .5em 10%;
-    padding: .5em 1em;
-    label{
-      margin: .3em;
-      color: #FFFFFF;
-      text-shadow: 2px 2px 2px #000000;
-    }
-    textarea{
-      height: 8em;
-    }
-    input, textarea{
-      padding: .7em .5em;
-      outline: none;
-      border: none;
-      border-radius: .2em;
-      font-family: Avenir;
-      &:focus{
-        border: .2em solid #001529;
-        transition: border .1s;
-      }
-      &::placeholder{
-        font-family: Avenir;
-      }
-    }
-    p{
-      color: #FF0000;
-      text-shadow: 1px 0px 0px #c40000;
-      font-weight: 400;
-      margin: .1em;
-      text-align: center;
-    }
-  }
-  .buttonMail{
-    width: 5em;
-    margin: 1em auto;
-    border-radius: .2em;
-    background-color: #001529cb;
-    &:hover{
-      background-color: #001529;
-    }
-    &:active{
-      transform: scale(0.95);
-    }
-  }
-  .contentForm{
-    margin: .5em;
-    padding: .8em;
-    background-color: #889eafa8;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 2px #001529;
-    font-style: italic;
-    border-top-left-radius: 2em 35%;
-    border-bottom-right-radius: 2em 35%;
-  }
-  //NAVBAR
-  nav{
-    width: 2em;
-    height: 100%;
-  }
-  .registered, .open{
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #506D84;
-  }
-  .ocult{
-    display: none;
-  }
-  .open{
-    width: 2em;
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-
-  }
-  .registered{
-    width:6em;
-    justify-content: space-between;
-    margin: 0;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    transition: .4s;
-    z-index: 2;
-      li{
-        width:100%;
-        text-align:center;
-        color: #000000;
-        text-shadow: 0px 0px 5px #FFFFFF;
-        font-family: GothamV2;
-        font-size: .7rem;
-      }
-      li:hover{
-        color: #FFFFFF;
-        text-shadow: 0px 0px 5px #000000;
-      }
-  }
-  .active{
-    color: #FFFFFF;
-  }
-  
-  .open li, .registered li{
-    cursor: pointer;
-  }
-  .image{
-    padding: 0.5em;
-  }
-  @media screen and (max-width:900px) {
-    .contentAbout{
-      width: 90%;
-    }
-  }
-  @media screen and (max-width:800px) {
-    .contentSlider{
-      width: 30em;
-    }
-    .imageSlider{
-      min-height: 250px;
-    }
-
-  }
-  @media screen and (max-width:600px) {
-
-    .displayName,
-    .displayCode {
-      width: 100%;
-    }
-    .displayCode {
-      margin: 0;
-    }
-    .inputName, .inputCode {
-      width: 90%;
-    }
-    .inputCode {
-      margin: .5em auto;
-    }
-    .contentAbout{
-      width: 90%;
-    }
-    .contentCards{
-      width: 80%;
-    }
-    .cardsUp li, .cardsDown li{
-      width:14em;
-      margin: .1em;
-    }
-    .contentAbout{
-      p{
-        line-height: 1;
-        text-shadow: 0px 0px 10px #000000;
-      }
-    }
-    .certificate{
-      width: 60%;
-      margin: 1em auto;
-    }
-  }
-  @media screen and (max-width:450px) {
-    .contentProject{
-      width: 90%
-    }
-    .imageSlider{
-      min-height: 200px !important;
-      img{
-        min-height: 200px !important;
-      }
-    }
-    
-    .container {
-      h1{
-        margin: 1em;
-        padding: 0;
-      }
-    }
-  }
-
-  @media screen and (max-width:350px) {
-    .certificate{
-      width: 150px;
-      margin: 0;
-    }
-    .form{
-      width: 15em;
-    }
-
-  }
+}
