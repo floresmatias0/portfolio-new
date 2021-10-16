@@ -18,7 +18,9 @@ import marvel_1 from '../assets/images/marvel/marvel_1.webp'
 import marvel_2 from '../assets/images/marvel/marvel_2.webp'
 import marvel_3 from '../assets/images/marvel/marvel_3.webp'
 
-
+import nasa_1 from '../assets/images/nasa/nasa-home.png'
+import nasa_2 from '../assets/images/nasa/nasa-favorites.png'
+import nasa_3 from '../assets/images/nasa/nasa-about.png'
 
 import rickandmorty_1 from '../assets/images/rickandmorty/rickandmorty_1.png'
 import rickandmorty_2 from '../assets/images/rickandmorty/rickandmorty_2.png'
@@ -30,3 +32,4 @@ export const weather = [ weather_1,weather_2,weather_3 ]
 export const movies = [ movies_1,movies_2,movies_3 ]
 export const marvel = [ marvel_1,marvel_2,marvel_3]
 export const rickandmorty = [ rickandmorty_1,rickandmorty_2,rickandmorty_3 ]
+export const nasa = [ nasa_1,nasa_2,nasa_3 ]

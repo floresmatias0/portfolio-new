@@ -6,6 +6,7 @@ import {
   movies,
   marvel,
   rickandmorty,
+  nasa
 } from "../../helper/Images";
 import { withTranslation } from "react-i18next";
 import Slider from "../../components/slider/Slider";
@@ -14,6 +15,7 @@ const Projects = ({ t }) => {
   const [slider, setSlider] = useState(1);
 
   let pages = {
+    nasa: "https://nasa-app-ten.vercel.app/",
     videogames: "https://pi-videogames-black.vercel.app/",
     pokemon: "https://pi-pokemon-murex.vercel.app/",
     marvel: "https://pi-marvel.000webhostapp.com/",
@@ -42,6 +44,10 @@ const Projects = ({ t }) => {
           <h2 style={{ background: "none", marginBottom: ".5em" }}>
             Rick and Morty
           </h2>
+        ) : slider === 7 ? (
+          <h2 style={{ background: "none", marginBottom: ".5em" }}>
+            Nasa
+          </h2>
         ) : (
           ""
         )}
@@ -57,6 +63,8 @@ const Projects = ({ t }) => {
           <Slider props={movies} />
         ) : slider === 6 ? (
           <Slider props={rickandmorty} />
+        ): slider === 7 ? (
+          <Slider props={nasa} />
         ) : (
           ""
         )}
@@ -75,6 +83,8 @@ const Projects = ({ t }) => {
               ? () => window.open(`${pages.movies}`)
               : slider === 6
               ? () => window.open(`${pages.rickandmorty}`)
+              : slider === 7
+              ? () => window.open(`${pages.nasa}`)
               : ""
           }
         >
@@ -98,6 +108,9 @@ const Projects = ({ t }) => {
           </button>
           <button className="buttonSelection" onClick={() => setSlider(6)}>
             6
+          </button>
+          <button className="buttonSelection" onClick={() => setSlider(7)}>
+            7
           </button>
         </div>
       </div>
