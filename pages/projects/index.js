@@ -12,12 +12,12 @@ import { withTranslation } from "react-i18next";
 import Slider from "../../components/slider/Slider";
 
 const Projects = ({ t }) => {
-  const [slider, setSlider] = useState(1);
+  const [slider, setSlider] = useState(2);
 
   let pages = {
     nasa: "https://nasa-app-ten.vercel.app/",
     videogames: "https://pi-videogames-black.vercel.app/",
-    pokemon: "https://pi-pokemon-murex.vercel.app/",
+    // pokemon: "https://pi-pokemon-murex.vercel.app/",
     marvel: "https://pi-marvel.000webhostapp.com/",
     clima: "https://floresmatias0.github.io/weather-app/",
     movies: "https://floresmatias0.github.io/ombdMovies/",
@@ -28,9 +28,10 @@ const Projects = ({ t }) => {
     <div className="container">
       <h1>{t("Own projects")}</h1>
       <div className="contentProject">
-        {slider === 1 ? (
+      {/* slider === 1 ? (
           <h2 style={{ background: "none", marginBottom: ".5em" }}>Pokemon</h2>
-        ) : slider === 2 ? (
+        ) :  */}
+        {slider === 2 ? (
           <h2 style={{ background: "none", marginBottom: ".5em" }}>
             Videogames
           </h2>
@@ -51,9 +52,10 @@ const Projects = ({ t }) => {
         ) : (
           ""
         )}
-        {slider === 1 ? (
+        {/* slider === 1 ? (
           <Slider props={pokemon} />
-        ) : slider === 2 ? (
+        ) :  */}
+        {slider === 2 ? (
           <Slider props={videogame} />
         ) : slider === 3 ? (
           <Slider props={marvel} />
@@ -70,10 +72,11 @@ const Projects = ({ t }) => {
         )}
         <button
           className="buttonPage"
+          // slider === 1
+          //     ? () => window.open(`${pages.pokemon}`)
+          //     : 
           onClick={
-            slider === 1
-              ? () => window.open(`${pages.pokemon}`)
-              : slider === 2
+            slider === 2
               ? () => window.open(`${pages.videogames}`)
               : slider === 3
               ? () => window.open(`${pages.marvel}`)
@@ -91,9 +94,9 @@ const Projects = ({ t }) => {
           {t("Go page")}
         </button>
         <div>
-          <button className="buttonSelection" onClick={() => setSlider(1)}>
+          {/* <button className="buttonSelection" onClick={() => setSlider(1)}>
             1
-          </button>
+          </button> */}
           <button className="buttonSelection" onClick={() => setSlider(2)}>
             2
           </button>
