@@ -45,11 +45,13 @@ const Projects = ({ t }) => {
           <h2 style={{ background: "none", marginBottom: ".5em" }}>
             Rick and Morty
           </h2>
-        ) : slider === 7 ? (
-          <h2 style={{ background: "none", marginBottom: ".5em" }}>
-            Nasa
-          </h2>
-        ) : (
+        ) 
+        // : slider === 7 ? (
+        //   <h2 style={{ background: "none", marginBottom: ".5em" }}>
+        //     Nasa
+        //   </h2>
+        // ) 
+        : (
           ""
         )}
         {/* slider === 1 ? (
@@ -65,9 +67,12 @@ const Projects = ({ t }) => {
           <Slider props={movies} />
         ) : slider === 6 ? (
           <Slider props={rickandmorty} />
-        ): slider === 7 ? (
-          <Slider props={nasa} />
-        ) : (
+        )
+        // : 
+        // slider === 7 ? (
+        //   <Slider props={nasa} />
+        // ) 
+        : (
           ""
         )}
         <button
@@ -86,8 +91,9 @@ const Projects = ({ t }) => {
               ? () => window.open(`${pages.movies}`)
               : slider === 6
               ? () => window.open(`${pages.rickandmorty}`)
-              : slider === 7
-              ? () => window.open(`${pages.nasa}`)
+              // : 
+              // slider === 7
+              // ? () => window.open(`${pages.nasa}`)
               : ""
           }
         >
@@ -112,9 +118,9 @@ const Projects = ({ t }) => {
           <button className="buttonSelection" onClick={() => setSlider(6)}>
             6
           </button>
-          <button className="buttonSelection" onClick={() => setSlider(7)}>
+          {/* <button className="buttonSelection" onClick={() => setSlider(7)}>
             7
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

@@ -175,7 +175,7 @@ const Contact = ({ t }) => {
           <Image
             onClick={() => {
               window.open(
-                "https://drive.google.com/file/d/1OLPW-9ng1Do1PmZKkOzLvBXi1ZD_XnjQ/view?usp=sharing"
+                "https://drive.google.com/file/d/1e5wbvhMtqkkFMjdulvBdaGLffx5dJU3J/view?usp=sharing"
               );
             }}
             src={cv}

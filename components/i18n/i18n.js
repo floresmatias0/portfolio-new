@@ -11,18 +11,9 @@ const resources = {
       "Hi": "Hi",
       "Well Done!": "Well Done!",
       "About": "About me",
-      "Text about": `My name is Matias I am a FullStack developer graduated from SoyHenry.
-      In the final projects I have made an individual one that consisted of using an API
-      to make requests for information about said api and make a single page application
-      with static and dynamic routes using NodeJS plus Express, Sequelize, PostgreSQL for the backend and
-      ReactJS in addition to React-Redux and CSS-module for the frontend.
-      Finally, a group project that consisted of creating an e-commerce using the SCRUM methodology.
-      for more details on these projects I will leave my cv below so you can download and view calmly.
-      I like to program, whenever I can implement a new library to fill myself with knowledge I always think
-      that for some project it will be useful to learn it and I investigate it until I know how to use it my place of comfort is the frontend
-      Although the backend is doing very well for me, I have even tried sockets, I like to work as a team I think this is
-      good to have different perspectives, if you need to contact me or need my help in the contact tab you can send me
-      an email from the form or I will also be leaving my social networks in which you can also talk to me,
+      "Text about": `My name is Matias. I am a full stack developer in constant growth, graduated from soyHenry, I took the Alkemy acceleration course which I successfully completed, then I became part of the staff as a mentor assistant, later I started working remotely at Travtion where I Performance in both frontend and backend roles using a scrum work methodology.
+      I am currently working in the company Radio miter in a dependency relationship, in addition to continuing with my Freelance position in Travtion, I have managed to combine both schedules due to the good predisposition of my employers, they have also given me the possibility to grow giving me the opportunity to continue studying , if you need to contact me or need my help in the contact tab you can send me
+      an email from the form or I will also be leaving my social networks where you can talk to me,
       I will be very happy to help you!`,
       "Learned skills": "Learned skills",
       "Certificates": "Certificates",
@@ -78,18 +69,9 @@ const resources = {
         "Hi": "Olá",
         "Well Done!": "Bem feito!",
         "About": "Sobre mim",
-        "Text about": `Meu nome é Matias, sou um desenvolvedor FullStack graduado pela SoyHenry.
-        nos projetos finais fiz um individual que consistia no uso de uma API
-        para fazer solicitações de informações sobre a referida api e fazer um aplicativo de página única
-        com rotas estáticas e dinâmicas usando NodeJS plus Express, Sequelize, PostgreSQL para o backend e
-        ReactJS, além de React-Redux e módulo CSS para o frontend.
-        Por fim, um projeto de grupo que consistiu na criação de um e-commerce utilizando a metodologia SCRUM.
-        para mais detalhes sobre esses projetos deixarei meu cv abaixo para que você possa baixar e assistir com calma.
-        Gosto de programar, sempre que consigo implementar uma nova biblioteca para me encher de conhecimento sempre penso
-        que para algum projeto será útil aprendê-lo e eu investigo até saber como usá-lo meu lugar de conforto é o frontend
-        Embora o backend esteja indo muito bem para mim, eu até tentei soquetes, gosto de trabalhar em equipe, acho que isso é
-        bom ter perspectivas diferentes, se precisar entrar em contato comigo ou precisar da minha ajuda na aba de contato você pode me enviar
-        um email do formulário ou também estarei saindo das minhas redes sociais nas quais você também pode falar comigo,
+        "Text about": `Meu nome é Matias. Sou um desenvolvedor full stack em constante crescimento, formado pela soyHenry, fiz o curso de aceleração Alkemy que concluí com sucesso, depois passei a fazer parte da equipe como assistente de mentor, depois comecei a trabalhar remotamente na Travtion onde ■ Atuação em funções de front-end e back-end utilizando uma metodologia de trabalho scrum.
+        Atualmente estou trabalhando na empresa Radio mitre em uma relação de dependência, além de continuar com meu cargo de Freelance na Travtion, consegui combinar os dois horários devido à boa predisposição dos meus empregadores, eles também me deram a possibilidade de crescer me dando a oportunidade de continuar estudando, se precisar entrar em contato comigo ou precisar da minha ajuda na aba de contato pode me enviar
+        um email do formulário ou também estarei deixando minhas redes sociais onde você pode falar comigo,
         Ficarei muito feliz em ajudá-lo!`,
         "Learned skills": "habilidades aprendidas",
         "Certificates": "Certificados",
@@ -145,18 +127,9 @@ const resources = {
         "Hi": "Hola",
         "Well Done!": "Bien hecho!",
         "About": "Sobre mi",
-        "Text about": `Mi nombre es Matias soy desarrollador FullStack graduado en soyHenry. 
-        en los proyectos finales he realizado uno individual que consistia en utilizar una Api 
-        para realizar peticiones de informacion sobre dicha api y realizar una single page application
-        con rutas estaticas y dinamicas utilizando NodeJS ademas de Express,Sequelize,PostgreSQL para el backend y 
-        ReactJS ademas de React-Redux y CSS-module para el frontend.
-        Por ultimo un proyecto grupal que consistia en crear un e-commerce utilizando la metodologia SCRUM
-        para mas detalles sobre estos proyectos voy a dejar mi cv mas abajo para que puedas descargar y ver tranquilamente. 
-        Me gusta programar, siempre que puedo implemento alguna libreria nueva para llenarme de conocimiento siempre pienso
-        que para algun proyecto me va a servir aprenderlo y lo investigo hasta saber utilizarlo mi lugar de confort es el frontend 
-        aunque en el backend me va muy bien tambien hasta he probado sockets, me gusta trabajar en equipo pienso que esta
-        bueno tener distintas perspectivas, si necesitas contactarme o necesitas mi ayuda en la pestaña de contacto podras enviarme
-        un correo desde el formulario o tambien voy a estar dejando mis redes sociales en las cuales me puedes hablar tambien, 
+        "Text about": `Mi nombre es Matias Soy un desarrollador full stack en crecimiento constante, graduado en soyHenry, realice el curso de aceleracion de Alkemy el cual concluí con exito luego forme parte del staff como asistente de mentor, posteriormente comence a trabajar en Travtion de manera remota donde me desempeño en ambos roles tanto frontend como backend utilizando una metodologia de trabajo scrum.
+        Actualmente estoy trabajando en la empresa Radio mitre en relacion de dependencia ademas de continuar con mi puesto Freelance en Travtion, he logrado compatibilizar ambos horarios dada a la buena predisposicion de mis empleadores, ademas me han dado la posibilidad de crecer dandome la oportunidad de seguir estudiando, si necesitas contactarme o necesitas mi ayuda en la pestaña de contacto podras enviarme
+        un correo desde el formulario o tambien voy a estar dejando mis redes sociales en las cuales me puedes hablar, 
         ¡estaré muy feliz de poder ayudarte!`,
         "Learned skills": "Habilidades aprendidas",
         "Certificates": "Certificados",

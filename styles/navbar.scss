@@ -1,8 +1,9 @@
 //NAVBAR
 nav {
-  width: 2em;
+  width: 3em;
   height: 100%;
-}
+};
+
 .registered,
 .open {
   padding: 0;
@@ -13,46 +14,68 @@ nav {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  background-color: #506d84;
-}
+  background-color: #d4b499;
+};
+
 .ocult {
   display: none;
-}
+};
+
 .open {
-  width: 2em;
+  width: 3em;
   margin: 0;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+
+  li {
+    padding: 15px 0;
+  }
+
+};
+
+ul[data-show='false'] {
+  .exit,
+  .route,
+  .carousel,
+  .image {
+    display: none;
+  };
 }
+
 .registered {
-  width: 6em;
+  width: 8em;
   justify-content: space-between;
   margin: 0;
   padding-top: 2em;
   padding-bottom: 2em;
   transition: 0.4s;
   z-index: 2;
+
   li {
     width: 100%;
     text-align: center;
     color: #000000;
     text-shadow: 0px 0px 5px #ffffff;
     font-family: GothamV2;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+
+    &:hover {
+      color: #ffffff;
+      text-shadow: 0px 0px 5px #000000;
+    }
   }
-  li:hover {
-    color: #ffffff;
-    text-shadow: 0px 0px 5px #000000;
-  }
-}
+
+};
+
 .active {
-  color: #ffffff;
-}
+  color: #ffffff !important;
+};
 
 .open li,
 .registered li {
   cursor: pointer;
-}
+};
+
 .image {
   padding: 0.5em;
-}
+};
