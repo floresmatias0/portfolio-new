@@ -10,6 +10,10 @@
   font-family: GothamV2;
   src: url("../assets/fonts/Gotham-Medium.otf");
 }
+@font-face {
+  font-family: 'Kanit', sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap")
+}
 //ALL CONTAINERS
 .container {
   width: 100%;
@@ -19,7 +23,7 @@
   align-items: center;
   text-align: center;
   height: 100vh;
-  font-family: Avenir;
+  font-family: Thin;
   backdrop-filter: blur(1.5px);
   h2 {
     margin: 0 3em;

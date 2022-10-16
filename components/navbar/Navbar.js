@@ -89,46 +89,53 @@ const Navbar = ({t}) => {
           <li onClick={() => setHidden(hidden ? false : true)}>
             <Image src={hidden ? backArrow : nextArrow} alt='closeBar' width={25} height={25} />
           </li>
-          {/* IMAGE AVATAR */}
-          <li className='image'>
-            <Image className='test' src={Mati} alt="imgProfile" width={300} height={300} objectFit="cover" placeholder="blur"/>
-          </li>
-          {/* EXIT */}
-          <li className='exit' onClick={deleteName}>
-            {t('EXIT')}
-          </li>
           {/* CAROUSEL TRADUCTOR */}
           <li className='carousel'>
-              <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
-                <div onClick={() => change('en')}>
-                  <Image  src={inglaterra} width={32} height={32}/>
-                </div>
-                <div onClick={() => change('es')}>
-                  <Image  src={españa} width={32} height={32}/>
-                </div>
-                <div onClick={() => change('pr')}>
-                  <Image  src={portugal} width={32} height={32}/>
-                </div>
-              </Carousel>
+            <ul>
+              <li onClick={() => change('en')}>
+                <span>ENGLISH</span>
+                <Image  src={inglaterra} alt="flag-england" width={20} height={20}/>
+              </li>
+              <li onClick={() => change('es')}>
+                <span>ESPAÑOL</span>
+                <Image  src={españa} alt="flag-españa" width={20} height={20}/>
+              </li>
+              <li onClick={() => change('pr')}>
+                <span>PORTUGAIS</span>
+                <Image  src={portugal} alt="flag-portugal" width={20} height={20}/>
+              </li>
+            </ul>
+          </li>
+          {/* IMAGE AVATAR */}
+          <li className='image'>
+            <Image className='test' src={Mati} alt="imgProfile" width={400} height={400} objectFit="cover" placeholder="blur"/>
           </li>
           {/* ROUTES */}
-          <li className={router.pathname === "/home" ? "route active" : "route"}>
-              <Link href='/home'>{t('HOME')}</Link>
-          </li>
-          <li className={router.pathname === "/about" ? "route active" : "route"}>
-              <Link href='/about'>{t('ABOUT ME')}</Link>
-          </li>
-          <li className={router.pathname === "/skills" ? "route active" : "route"}>
-              <Link href='/skills'>{t('SKILLS')}</Link>
-          </li>
-          <li className={router.pathname === "/certificates" ? "route active" : "route"}>
-              <Link href='/certificates'>{t('DEGREES')}</Link>
-          </li>
-          <li className={router.pathname === "/contact" ? "route active" : "route"}>
-              <Link href='contact'>{t('CONTACT')}</Link>
-          </li>
-          <li className={router.pathname === "/projects" ? "route active" : "route"}>
-              <Link href='/projects'>{t('PROJECTS')}</Link>
+          <li>
+            <ul>
+              <li className={router.pathname === "/home" ? "route active" : "route"}>
+                  <Link href='/home'>{t('HOME')}</Link>
+              </li>
+              <li className={router.pathname === "/about" ? "route active" : "route"}>
+                  <Link href='/about'>{t('ABOUT ME')}</Link>
+              </li>
+              <li className={router.pathname === "/skills" ? "route active" : "route"}>
+                  <Link href='/skills'>{t('SKILLS')}</Link>
+              </li>
+              <li className={router.pathname === "/certificates" ? "route active" : "route"}>
+                  <Link href='/certificates'>{t('DEGREES')}</Link>
+              </li>
+              <li className={router.pathname === "/contact" ? "route active" : "route"}>
+                  <Link href='contact'>{t('CONTACT')}</Link>
+              </li>
+              <li className={router.pathname === "/projects" ? "route active" : "route"}>
+                  <Link href='/projects'>{t('PROJECTS')}</Link>
+              </li>
+              {/* EXIT */}
+              <li className='exit' onClick={deleteName}>
+                {t('EXIT')}
+              </li>
+            </ul>
           </li>
         </ul>
       )}
