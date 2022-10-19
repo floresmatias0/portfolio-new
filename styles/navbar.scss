@@ -130,3 +130,59 @@ ul[data-show='false'] {
 .image {
   padding: 0.5em;
 };
+
+.container_language {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 4em;
+
+  .lang_list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      float: right;
+      transition: all 1ms ease-in-out;
+    }
+
+    .content_icon_world {
+      transition: all 1ms ease-in-out;
+
+      .icon_world {
+        background-color: #03989E;
+        border-radius: 50%;
+        border: 5px solid #03989E !important;
+        z-index: 3;
+
+        &:hover {
+          transition: all .5ms ease-in;
+          border-color:#004040 !important;
+        }
+      }
+    }
+
+    .content_flag_england,
+    .content_flag_españa,
+    .content_flag_portugal {
+      transition: all 1ms ease-in-out;
+      
+      .flag_england,
+      .flag_españa,
+      .flag_portugal {
+        border-radius: 5px;
+        background-color: #03989E;
+        border: 5px solid #03989E;
+
+        &:hover {
+          transition: all .5ms ease-in;
+          background-color: #004040;
+          border-color:#004040 !important;
+        }
+      }
+    }
+  }
+}

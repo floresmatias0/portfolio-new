@@ -1,38 +1,23 @@
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
-import Link from 'next/link'
-import Image from 'next/image'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import Image from 'next/image';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import Mati from '../../assets/images/IMG_8764(edit).jpg'
-import backArrow from '../../assets/images/arrow-back.svg'
-import nextArrow from '../../assets/images/arrow.svg'
+import Mati from '../../assets/images/IMG_8764(edit).jpg';
+import backArrow from '../../assets/images/arrow-back.svg';
+import nextArrow from '../../assets/images/arrow.svg';
 
-import i18n from '../i18n/i18n'
-import { withTranslation } from 'react-i18next'
-import portugal from '../../assets/images/portugal_flags.png'
-import españa from '../../assets/images/spain_flag.png'
-import inglaterra from '../../assets/images/united_kingdom_flag.png'
+import { withTranslation } from 'react-i18next';
 
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const Navbar = ({t}) => {
   let router = useRouter()
 
-  const [logged, setLogged] = useState(null)
-  const [hidden, setHidden] = useState(false)
-
-  const change = (language) =>{
-    i18n.changeLanguage(language)
-    Swal.fire({
-      icon: 'success',
-      html: `<p>${t('Change language')}</p>`
-    })
-  }
+  const [logged, setLogged] = useState(null);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("name")) {
@@ -83,28 +68,11 @@ const Navbar = ({t}) => {
           `}
       </style>
 
-      {logged && (        
+      {logged && (
         <ul className={`${hidden ? 'registered' : 'open'}`} data-show={hidden}>
           {/* ICON OPEN/CLOSE */}
           <li onClick={() => setHidden(hidden ? false : true)}>
             <Image src={hidden ? backArrow : nextArrow} alt='closeBar' width={25} height={25} />
-          </li>
-          {/* CAROUSEL TRADUCTOR */}
-          <li className='carousel'>
-            <ul>
-              <li onClick={() => change('en')}>
-                <span>ENGLISH</span>
-                <Image  src={inglaterra} alt="flag-england" width={20} height={20}/>
-              </li>
-              <li onClick={() => change('es')}>
-                <span>ESPAÑOL</span>
-                <Image  src={españa} alt="flag-españa" width={20} height={20}/>
-              </li>
-              <li onClick={() => change('pr')}>
-                <span>PORTUGAIS</span>
-                <Image  src={portugal} alt="flag-portugal" width={20} height={20}/>
-              </li>
-            </ul>
           </li>
           {/* IMAGE AVATAR */}
           <li className='image'>

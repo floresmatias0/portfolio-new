@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import Navbar from "../components/navbar/Navbar";
+import Language from "../components/changeLang/Language";
 
 import "../styles/globals.css";
 import "../styles/navbar.scss";
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps }) {
       </style>
       {router && router.pathname !== "/" && logged ? (
         <>
+          <Language/>
           <Navbar />
           <Component {...pageProps} />
         </>
